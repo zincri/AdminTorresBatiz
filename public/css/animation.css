@@ -1,0 +1,19 @@
+text:hover{
+	cursor: pointer;
+}
+#imagenMultifuncional .circulito{
+	animation: rotacion 40s linear infinite;
+	transform-origin: 50.59% 64.9%;
+
+}
+
+@keyframes rotacion{
+	0%{
+		transform: rotate(0deg);
+
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+
+}
