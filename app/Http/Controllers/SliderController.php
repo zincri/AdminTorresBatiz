@@ -25,7 +25,6 @@ class SliderController extends Controller
     {
         //
         $datos = DB::table('tbl_slider')->where('activo','=',1)->get();
-        
         return view('content.slider.index',['datos' => $datos]);
     }
 

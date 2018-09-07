@@ -52,26 +52,35 @@ class CategoriasController extends Controller
 
         
         $credentials=$this->validate(request(),[
-            'categoria' => 'required|string|max:99'  
+            'categoria' => 'required|string|max:99', 
+            'file'=>'required|mimes:jpg,jpeg,png|max:1000'
         ]);
-        
-        $opcion=1;
-        $categoria=$request->get('categoria');
-        $usuario=Auth::user()->id;
-        $id=1;
-        $sql_sol = "call sp_CRUD_Categorias
-        (
-            '".$opcion."',
-            '".$categoria."',
-            '".$usuario."',
-            '".$id."'
+        if($request->file('file')){
+            $path= Storage::disk('public')->put('imageupload/categorias', $request->file('file'));
+            $imagen=asset($path);
             
-        )";
-        $datos = DB::select($sql_sol,array(1,10));
-        if($datos==null){
+            $opcion=1;
+            $categoria=$request->get('categoria');
+            $usuario=Auth::user()->id;
+            $id=1;
+            $sql_sol = "call sp_CRUD_Categorias
+            (
+                '".$opcion."',
+                '".$categoria."',
+                '".$usuario."',
+                '".$id."',
+                '".$imagen."'
+                
+            )";
+            $datos = DB::select($sql_sol,array(1,10));
+            if($datos==null){
+                return Redirect::to('administrador/categorias')->withErrors(['erroregistro'=> 'Error']);
+            }
+            return Redirect::to('administrador/categorias');
+        }
+        else{
             return Redirect::to('administrador/categorias')->withErrors(['erroregistro'=> 'Error']);
         }
-        return Redirect::to('administrador/categorias');
         
     }
 
@@ -118,24 +127,67 @@ class CategoriasController extends Controller
             'categoria' => 'required|string|max:99'  
         ]);
         
-        
-        $opcion=2;
-        $categoria=$request->get('categoria');
-        $usuario=Auth::user()->id;
+        if($request->file('file')){
+           
+            $credentials=$this->validate(request(),[
+                'file'=>'required|mimes:jpg,jpeg,png|max:1000'
+            ]);
+            $path= Storage::disk('public')->put('imageupload/categorias', $request->file('file'));
+            $imagen=asset($path);
+            $opcion=2;
+            $categoria=$request->get('categoria');
+            $usuario=Auth::user()->id;
 
-        $sql_sol = "call sp_CRUD_Categorias
-        (
-            '".$opcion."',
-            '".$categoria."',
-            '".$usuario."',
-            '".$id."'
+            /*OBTENER IMAGEN ANTERIOR*/ 
+            $datos = DB::table('tbl_categoriaproducto')->where('id','=',$id)->where('activo','=',1)->first();
+            /*ELIMINAR LA IMAGEN ANTERIOR*/
+            //if(Storage::disk('public')->exists($datos->imagen)){
+            //    $dele= Storage::disk('public')->delete($datos->imagen);
+            //}
+            $cadena=substr($datos->imagen, 22,strlen ($datos->imagen));   
+            if(Storage::disk('public')->exists($cadena)){
+                $dele= Storage::disk('public')->delete($cadena);
+            }
+
+            $sql_sol = "call sp_CRUD_Categorias
+            (
+                '".$opcion."',
+                '".$categoria."',
+                '".$usuario."',
+                '".$id."',
+                '".$imagen."'
+                
+            )";
+            $datos = DB::select($sql_sol,array(1,10));
+            if($datos==null){
+                return Redirect::to('administrador/categorias')->withErrors(['erroregistro'=> 'Error']);
+            }
+            return Redirect::to('administrador/categorias');
+
+            }
+        else{
             
-        )";
-        $datos = DB::select($sql_sol,array(1,10));
-        if($datos==null){
-            return Redirect::to('administrador/categorias')->withErrors(['erroregistro'=> 'Error']);
+            $imagen="no importa";
+            $opcion=3;
+            $categoria=$request->get('categoria');
+            $usuario=Auth::user()->id;
+            $sql_sol = "call sp_CRUD_Categorias
+            (
+                '".$opcion."',
+                '".$categoria."',
+                '".$usuario."',
+                '".$id."',
+                '".$imagen."'
+                
+            )";
+            $datos = DB::select($sql_sol,array(1,10));
+            if($datos==null){
+                return Redirect::to('administrador/categorias')->withErrors(['erroregistro'=> 'Error']);
+            }
+            return Redirect::to('administrador/categorias');
+
         }
-        return Redirect::to('administrador/categorias');
+
 
     }
 
@@ -147,19 +199,26 @@ class CategoriasController extends Controller
      */
     public function destroy($id)
     {
-        $opcion=3;
+        $opcion=4;
         $categoria="no importa";
         $usuario=Auth::user()->id;
-
+        $imagen="no importa";
         $sql_sol = "call sp_CRUD_Categorias
         (
             '".$opcion."',
             '".$categoria."',
             '".$usuario."',
-            '".$id."'
+            '".$id."',
+            '".$imagen."'
             
         )";
         $datos = DB::select($sql_sol,array(1,10));
+
+        $cadena=substr($datos[0]->imagen, 22,strlen ($datos[0]->imagen));   
+        if(Storage::disk('public')->exists($cadena)){
+            $dele= Storage::disk('public')->delete($cadena);
+        }
+
         if($datos==null){
             return Redirect::to('administrador/categorias')->withErrors(['erroregistro'=> 'Error']);
         }

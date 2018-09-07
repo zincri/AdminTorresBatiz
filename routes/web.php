@@ -57,7 +57,7 @@ Route::resource('/soporte','SoporteController');
 Route::resource('/consumibles','ConsumiblesController');
 Route::resource('/sucursales','SucursalesController');
 Route::resource('/contacto','ContactoController');
-Route::resource('/productostodos','productosTodosController');
+Route::resource('/productostodos','ProductosTodosController');
 
 Route::get('productostodosdetalle/{id}',[
     'as' => 'producto-detalle',
@@ -103,7 +103,7 @@ Route::get('cart/empty/all',[
 // Categorías routes
 Route::get('productostodos/showProducts/{id}',[
     'as' => 'send-categoria',
-    'uses' => 'productosTodosController@showProducts'
+    'uses' => 'ProductosTodosController@showProducts'
 ]);
 
 // End Categorías routes
