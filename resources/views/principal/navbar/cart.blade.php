@@ -252,21 +252,23 @@
 </div>
 <!-- end section -->
 <!-- section -->
+<!-- section -->
 <div class="section padding_layout_1" style="padding: 50px 0;">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="full">
-                    <ul class="brand_list">
-                        @foreach($marcas as $item)
-                        <li><img class="img-responsive2" src="{{$item->imagen}}" alt="#" /></li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-        </div>
+       <div class="row">
+          <div class="col-md-12">
+             <div class="full">
+                <ul class="brand_list">
+                   @foreach($marcas as $item)
+                   <li><img class="img-responsive2" src="{{$item->imagen}}" alt="#" /></li>
+                   @endforeach
+                </ul>
+             </div>
+          </div>
+       </div>
     </div>
-</div>
+ </div>
+ <!-- end section -->
 <!-- End Model search bar -->
 @endsection @push('zoomScript_js')
 <script type="text/javascript" src="{{ asset('js/cartShopping.js') }}"></script>

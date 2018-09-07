@@ -119,9 +119,81 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $informaciongeneral = DB::table('tbl_informaciongeneral')->first();
+        $marcas = DB::table('tbl_catmarcas')->where('activo','=',1)->get();
+        $videos = DB::table('tbl_catvideos')->where('activo','=',1)->get();
+        return view('principal.navbar.cart',["informaciongeneral"=>$informaciongeneral,
+                                            "marcas"=>$marcas,
+                                            "videos"=>$videos]);
+    }
+
+    public function add($id, $cantidad)
+    {
+        $mensaje = "";
+        $flag=false;
+        $a=DB::table('tbl_productogeneral')->where('activo','=',1)->where('id','=',$id)->first();
+        
+        $cart=\Session::get('cart');
+        
+        $entid=(int)$id;
+        foreach($cart as $item){
+            $entero=(int)$item->id;
+            if($entero == $entid) {
+                $flag=true;
+                $mensaje = "success";
+                break;   
+            }
+            else{
+                $mensaje = "error";//esta mal este mensaje aqui
+            }
+        }
+        if($flag==true){
+            $cantidadnueva=(int)$cart[$id]->cantidad;
+            $cantidadA=(int)$cantidad;
+            $cantidadnueva=$cantidadnueva+$cantidadA;
+            $cart[$id]->cantidad=$cantidadnueva;
+            
+        }
+        else {
+            $a->cantidad=$cantidad;
+            $cart[$id]=$a;
+            \Session::put('cart',$cart);
+        }
+        return redirect()->route('producto-detalle',['producto' => $id])->with('message',$mensaje);
+        
+        
+        
+    }
+
+    public function delete($id)
+    {
+        
+        $cart=\Session::get('cart');
+        unset($cart[$id]);
+        \Session::put('cart',$cart);
+        return redirect()->route('cart-show');
+        
+    }
+
+    public function vaciar()
+    {
+        
+        \Session::forget('cart');
+        return redirect()->route('cart-show');
+    }
+
+
+    public function refresh($id, $cantidad)
+    {
+        
+        $cart=\Session::get('cart');
+        //dd($id.":".$cantidad);
+        
+        $cart[$id]->cantidad=$cantidad;
+        \Session::put('cart',$cart);
+        return redirect()->route('cart-show');
     }
 
     /**
@@ -157,4 +229,5 @@ class CartController extends Controller
     {
         //
     }
+
 }

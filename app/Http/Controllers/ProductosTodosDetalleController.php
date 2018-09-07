@@ -7,6 +7,7 @@ use DB;
 
 class ProductosTodosDetalleController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *

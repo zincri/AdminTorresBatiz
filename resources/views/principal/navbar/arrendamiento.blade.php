@@ -148,25 +148,23 @@
                                     <div class="side_bar">
                                         <div class="side_bar_blog">
                                             <h4>Noticias recientes</h4>
-                                            <p>Consectetur, assumenda provident lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae laboriosam sunt hic perspiciatis<br><br> asperiores mollitia excepturi voluptatibus sequi nostrum ipsam veniam
-                                                omnis nihil! A ea maiores corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit
+                                            <p>{{$noticia->descripcion}}
                                             </p>
-                                            <p class="enlaceBlog"><a href="blog_detail.html">Ver más</a></p>
+                                            <p class="enlaceBlog"><a href="/noticias">Ver más</a></p>
                                         </div>
                                         <div class="side_bar_blog">
                                             <h4>Vídeos Destacados</h4>
                                             <div class="recent_post">
                                                 <ul>
                                                     <li>
-                                                        <p class="post_head"><a href="#">RICOH</a></p>
-                                                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/cw12x2r1UwA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                                        <p class="post_head"><a href="#">Video</a></p>
+                                                        <iframe width="100%" height="315" src="{{$video->video}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             <!--- SECCION NOTICIAS -->
                         </div>
                     </div>

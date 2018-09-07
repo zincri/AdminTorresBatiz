@@ -76,11 +76,18 @@
                                             {!! $errors->first('objetivos','<span class="help-block">:message</span>')!!}
                                         </div>
                                     </div>
-                                    <div class="form-group {{$errors->has('textoresena') ? 'has-error':''}}">
-                                        <label class="col-md-3 col-xs-12 control-label">Reseña</label>
+                                    <div class="form-group {{$errors->has('textoresena1') ? 'has-error':''}}">
+                                        <label class="col-md-3 col-xs-12 control-label">Primera reseña</label>
                                         <div class="col-md-6 col-xs-12">                                            
-                                            <textarea class="form-control" rows="5" name="textoresena">{{$datos->textoresena}}</textarea>
-                                            {!! $errors->first('textoresena','<span class="help-block">:message</span>')!!}
+                                            <textarea class="form-control" rows="5" name="textoresena1">{{$datos->textohistoria}}</textarea>
+                                            {!! $errors->first('textoresena1','<span class="help-block">:message</span>')!!}
+                                        </div>
+                                    </div>
+                                    <div class="form-group {{$errors->has('textoresena2') ? 'has-error':''}}">
+                                        <label class="col-md-3 col-xs-12 control-label">Segunda reseña</label>
+                                        <div class="col-md-6 col-xs-12">                                            
+                                            <textarea class="form-control" rows="5" name="textoresena2">{{$datos->textoresena}}</textarea>
+                                            {!! $errors->first('textoresena2','<span class="help-block">:message</span>')!!}
                                         </div>
                                     </div>
                                     <div class="form-group {{$errors->has('videoprincipal') ? 'has-error':''}}">

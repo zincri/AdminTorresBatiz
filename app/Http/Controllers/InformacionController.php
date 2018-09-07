@@ -54,7 +54,8 @@ class InformacionController extends Controller
         $mision=$request->get('mision');
         $vision=$request->get('vision');
         $objetivos=$request->get('objetivos');
-        $textoresena=$request->get('textoresena');
+        $textoresena1=$request->get('textoresena1');
+        $textoresena2=$request->get('textoresena2');
         $videoprincipal=$request->get('videoprincipal');
         $usuario=Auth::user()->id;
         
@@ -69,7 +70,8 @@ class InformacionController extends Controller
             'mision' => $mision,
             'vision'=>$vision,
             'objetivos'=>$objetivos,
-            'textoresena'=>$textoresena,
+            'textohistoria'=>$textoresena1,
+            'textoresena'=>$textoresena2,
             'videoprincipal'=>$videoprincipal,
             'usuario_upd'=>$usuario
         ]);

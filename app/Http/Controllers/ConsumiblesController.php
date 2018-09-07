@@ -16,11 +16,12 @@ class ConsumiblesController extends Controller
      */
     public function index()
     {
-        $noticia = DB::table('tbl_noticias')->where('activo','=',1)->orderBy('fecha_ins','desc')->first();
+        
         $informaciongeneral = DB::table('tbl_informaciongeneral')->first();
         $marcas = DB::table('tbl_catmarcas')->where('activo','=',1)->get();
         $videos = DB::table('tbl_catvideos')->where('activo','=',1)->get();
         $video=$videos->first();
+        $noticia = DB::table('tbl_noticias')->where('activo','=',1)->orderBy('fecha_ins','desc')->first();
         return view('principal.navbar.consumibles',["informaciongeneral"=>$informaciongeneral,
                                             "marcas"=>$marcas,
                                           "videos"=>$videos,

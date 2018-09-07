@@ -104,7 +104,7 @@
                                         <div class="col-md-6">
                                             <div>
                                                 <div>
-                                                    <h3 class="panel-title" ><strong>Historia:</strong>  </h3>
+                                                    <h3 class="panel-title" ><strong>Primera reseña:</strong>  </h3>
                                                 </div>
                                                 <div class="panel-body">
                                                     <p>{{$datos->textohistoria}}</p>
@@ -113,7 +113,7 @@
                                              </div>
                                              <div>
                                                 <div>
-                                                    <h3 class="panel-title"><strong>Reseña:</strong>  </h3>
+                                                    <h3 class="panel-title"><strong>Segunda reseña:</strong>  </h3>
                                                 </div>
                                                 <div class="panel-body">
                                                     <p>{{$datos->textoresena}}</p>

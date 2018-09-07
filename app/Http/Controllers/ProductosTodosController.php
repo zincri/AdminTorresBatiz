@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 class ProductosTodosController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *

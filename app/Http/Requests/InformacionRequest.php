@@ -32,7 +32,8 @@ class InformacionRequest extends FormRequest
             'mision' => 'required|string|max:1499',
             'vision' => 'required|string|max:1499',
             'objetivos' => 'required|string|max:1499',
-            'textoresena' => 'required|string|max:1499',
+            'textoresena1' => 'required|string|max:1499',
+            'textoresena2' => 'required|string|max:1499',
             'videoprincipal' => 'required|string|max:499'
         ];
     }

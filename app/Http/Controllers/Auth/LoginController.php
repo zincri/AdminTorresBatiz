@@ -55,9 +55,13 @@ class LoginController extends Controller
         
     }
     /*
-    public function logout(){
-        dd("si paso");
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
 
+        $request->session()->invalidate();
+
+        return $this->loggedOut($request) ?: redirect('administrador');
     }
     */
 }
