@@ -45,11 +45,11 @@
                     </li>
                     <li class="xn-profile">
                         <a href="#" class="profile-mini">
-                            <img src="{{asset('images/users/avatar.jpg')}}" alt="John Doe"/>
+                            <img src="{{asset('images/logogo.jpg')}}" alt="Torres Betiz"/>
                         </a>
                         <div class="profile">
                             <div class="profile-image">
-                                <img src="{{asset('images/users/avatar.jpg')}}" alt="John Doe"/>
+                                <img src="{{asset('images/logogo.jpg')}}" alt="Torres Batiz"/>
                             </div>
                             <div class="profile-data">
                                 <div class="profile-data-name">{{ Auth::user()->name }}</div>
@@ -117,7 +117,7 @@
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-sort-desc"></span> <span class="xn-text">Usuarios</span></a>
                          <ul>
-                            <li><a href="{{  url('informacion/tipo_de_obras')  }}"><span class="fa fa-image"></span> Usuarios registrados</a></li>
+                            <li><a href="{{  url('administrador/usuarios')  }}"><span class="fa fa-image"></span> Usuarios registrados</a></li>
                                                          
                         </ul>
                     </li>      
