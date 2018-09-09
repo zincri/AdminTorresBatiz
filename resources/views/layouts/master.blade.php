@@ -56,8 +56,8 @@
                                 <div class="profile-data-title">Administrador</div>
                             </div>
                             <div class="profile-controls">
-                                <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>
-                                <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>
+                                <a href="{{  url('administrador/informacion')  }}" class="profile-control-left"><span class="fa fa-info"></span></a>
+                                <a href="{{  url('administrador/mensajes')  }}" class="profile-control-right"><span class="fa fa-envelope"></span></a>
                             </div>
                         </div>                                                                        
                     </li>
@@ -107,7 +107,7 @@
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-sort-desc"></span> <span class="xn-text">Solicitudes</span></a>
                          <ul>
-                            <li><a href="{{  url('informacion/colonias')  }}"><span class="fa fa-image"></span> Mensajes</a></li>
+                            <li><a href="{{  url('administrador/mensajes')  }}"><span class="fa fa-image"></span> Mensajes</a></li>
                             <li><a href="{{  url('informacion/colonias')  }}"><span class="fa fa-image"></span> Solicitudes arrendamiento</a></li>
                             <li><a href="{{  url('informacion/colonias')  }}"><span class="fa fa-image"></span> Solicitudes consumibles</a></li>
                             <li><a href="{{  url('informacion/colonias')  }}"><span class="fa fa-image"></span> Solicitudes del carrito</a></li>

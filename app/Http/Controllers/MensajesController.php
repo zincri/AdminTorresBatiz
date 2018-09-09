@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+use DB;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
-use DB;
 
-class UsuariosController extends Controller
+class MensajesController extends Controller
 {
     public function __construct()
     {
@@ -21,8 +21,8 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        $usuarios =DB::table('users')->where('activo','=',1)->get();
-        return view('auth.users.index',["usuarios"=>$usuarios]);
+        $datos = DB::table('tbl_contacto')->where('activo','=',1)->get();
+        return view('content.mensajes.index',['datos' => $datos]);
     }
 
     /**
@@ -32,8 +32,7 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        return view('auth.users.create');
-        
+        //
     }
 
     /**
@@ -44,20 +43,7 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        $credentials=$this->validate(request(),[
-            'nombre'=>'required|string|max:50',
-            'email' => 'required|string|email|max:50|unique:users',
-            'password' => 'required|string|min:6|confirmed'
-        ]);
-        
-        
-        $usuario = new User;
-        $usuario->name = $request->get('nombre');
-        $usuario->email = $request->get('email');
-        $usuario->password = bcrypt($request->get('password'));
-        $usuario->activo =1;
-        $usuario->save();
-        return Redirect::to('administrador/usuarios');
+        //
     }
 
     /**
@@ -68,7 +54,13 @@ class UsuariosController extends Controller
      */
     public function show($id)
     {
-        //
+        $datos=DB::table('tbl_contacto')->where('activo','=',1)->where('id','=',$id)->first();
+        if($datos==null){
+            return Redirect::to('administrador/mensajes')->withErrors(['erroregistro'=> 'Error']);
+        }
+        else{
+            return view('content.mensajes.show',['datos' => $datos]);
+        }
     }
 
     /**
@@ -79,16 +71,7 @@ class UsuariosController extends Controller
      */
     public function edit($id)
     {
-        /*
-        $usuario =  User::findOrFail($id);
-        if($usuario==null){
-            return Redirect::to('administrador/usuarios');
-        }
-        $usuario->activo = 0;
-        $usuario->update();
-        
-        return Redirect::to('administrador/usuarios');
-        */
+        //
     }
 
     /**
@@ -100,6 +83,7 @@ class UsuariosController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //
     }
 
     /**
@@ -110,13 +94,6 @@ class UsuariosController extends Controller
      */
     public function destroy($id)
     {
-        $usuario =  User::findOrFail($id);
-        if($usuario==null){
-            return Redirect::to('administrador/usuarios');
-        }
-        $usuario->activo = 0;
-        $usuario->update();
-        
-        return Redirect::to('administrador/usuarios');
+        //
     }
 }

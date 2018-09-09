@@ -46,9 +46,9 @@
                                         <p><small>Estado</small><br/>Activo</p>                                   
                                         <p><small>Acceso</small><br/>Administrador</p>
                                         <p>
-                                            <a href="{{ URL::action('UsuariosController@edit',$item->id)}}"><button class="btn btn-primary">Eliminar</button></a>
+                                            <a href="" data-target="#message-box-danger-{{$item->id}}" data-toggle="modal"><button class="btn btn-danger" >Eliminar <i class="fa fa-trash-o"></i></button></a>
                                         </p> 
-                                        
+                                        @include('auth.users.delete')
                                     </div>
                                 </div>                                
                             </div>
