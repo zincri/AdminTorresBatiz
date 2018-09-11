@@ -21,8 +21,8 @@ class AdminCartController extends Controller
     public function index()
     {
         //AQUI ME QUEDE
-        $datos = DB::table('tbl_solicitudconsumibles')->where('activo','=',1)->get();
-        return view('content.consumibles.index',['datos' => $datos]);
+        $datos = DB::table('tbl_solicitudcart')->where('activo','=',1)->orderBy('fecha_ins','desc')->get();
+        return view('content.carrito.index',['datos' => $datos]);
     }
 
     /**
@@ -54,7 +54,20 @@ class AdminCartController extends Controller
      */
     public function show($id)
     {
-        //
+        $datos=DB::table('tbl_solicitudcart')->where('activo','=',1)->where('id','=',$id)->first();
+        if($datos==null){
+            return Redirect::to('administrador/carrito')->withErrors(['erroregistro'=> 'Error']);
+        }
+        else{
+            $usuario=Auth::user()->id;
+            $du =  DB::table('tbl_solicitudcart')
+            ->where('id', $id)
+            ->update([
+                'visto'=> 1,
+                'usuario_upd'=>$usuario
+            ]);
+            return view('content.carrito.show',['datos' => $datos]);
+        }
     }
 
     /**

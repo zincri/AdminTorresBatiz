@@ -9,7 +9,7 @@
                         <strong>Warning!</strong>Ocurrio un error, intentelo nuevamente por favor!
                     </div>
 ')!!}
-    <h2>Solicitud consumibles</h2>
+    <h2>Solicitud del carrito</h2>
     
                                     <hr>
                                     <div class="row">
@@ -72,7 +72,7 @@
 
 
                                 <div class="panel-footer">                                   
-                                   <a  href="{{url('administrador/consumibles')}}" ><button class="btn btn-primary pull-right">Atras</button></a> 
+                                   <a  href="{{url('administrador/carrito')}}" ><button class="btn btn-primary pull-right">Atras</button></a> 
                                 </div>
                                 <br>
                                 

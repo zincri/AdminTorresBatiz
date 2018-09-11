@@ -23,10 +23,12 @@ class InicioController extends Controller
         $proyectosrealizados = DB::table('tbl_proyectosrealizados')->where('activo','=',1)->get();
         $videos = DB::table('tbl_catvideos')->where('activo','=',1)->get();
         $slider = DB::table('tbl_slider')->where('activo','=',1)->get();
-        session(['informacion' => $informaciongeneral]);
-        session(['sucursales' => $sucursales]);
-        session(['servicios' => $servicios]);
-        session(['redes' => $redes]);
+        
+        session()->put('informacion', $informaciongeneral);
+        session()->put('sucursales', $sucursales);
+        session()->put('servicios', $servicios);
+        session()->put('redes', $redes);
+        
         
         
         return view('principal.navbar.inicio',["informaciongeneral"=>$informaciongeneral,

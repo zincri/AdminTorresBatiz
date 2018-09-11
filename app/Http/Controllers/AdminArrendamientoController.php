@@ -21,7 +21,7 @@ class AdminArrendamientoController extends Controller
      */
     public function index()
     {
-        $datos = DB::table('tbl_solicitud')->where('activo','=',1)->get();
+        $datos = DB::table('tbl_solicitud')->where('activo','=',1)->orderBy('fecha_ins','desc')->get();
         return view('content.arrendamiento.index',['datos' => $datos]);
     }
 

@@ -49,7 +49,7 @@
                         <div class="mail-checkbox">
                             <input type="checkbox" class="icheckbox"/>
                         </div>
-                        <div class="mail-star">
+                        <div class="mail-star {{($item->favorito == 1) ? 'starred' : '' }}">
                             <span class="fa fa-star-o"></span>
                         </div>
                         <div class="mail-user">{{$item->nombre}}</div>                                    

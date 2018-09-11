@@ -7,7 +7,18 @@ use DB;
 
 class ProductosTodosDetalleController extends Controller
 {
-    
+    public function __construct()
+    {
+        $informaciongeneral = DB::table('tbl_informaciongeneral')->first();
+        $sucursales = DB::table('tbl_sucursal')->where('activo','=',1)->get();
+        $servicios = DB::table('tbl_serviciosinformacion')->where('activo','=',1)->get();
+        $redes = DB::table('tbl_catredessociales')->where('activo','=',1)->limit(5)->get();
+        
+        session()->put('informacion', $informaciongeneral);
+        session()->put('sucursales', $sucursales);
+        session()->put('servicios', $servicios);
+        session()->put('redes', $redes);
+    }
     /**
      * Display a listing of the resource.
      *

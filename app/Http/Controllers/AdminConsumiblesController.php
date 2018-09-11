@@ -21,7 +21,7 @@ class AdminConsumiblesController extends Controller
      */
     public function index()
     {
-        $datos = DB::table('tbl_solicitudconsumibles')->where('activo','=',1)->get();
+        $datos = DB::table('tbl_solicitudconsumibles')->where('activo','=',1)->orderBy('fecha_ins','desc')->get();
         return view('content.consumibles.index',['datos' => $datos]);
     }
 

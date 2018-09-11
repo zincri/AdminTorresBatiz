@@ -11,7 +11,7 @@
     <!-- START CONTENT FRAME TOP -->
     <div class="content-frame-top">                        
         <div class="page-title">                    
-            <h2><span class="fa fa-inbox"></span> Solicitud de consumibles <small>(3 unread)</small></h2>
+            <h2><span class="fa fa-inbox"></span> Solicitudes del carrito <small>(3 unread)</small></h2>
         </div>                                                                                
         <!--
             <div class="pull-right">                            
@@ -58,7 +58,7 @@
                             <span class="fa fa-star-o"></span>
                         </div>
                         <div class="mail-user">{{$item->nombre}}</div>                                    
-                            <a href="{{ URL::action('AdminConsumiblesController@show',$item->id)}}" class="mail-text">{{$item->empresa}}</a>                                    
+                            <a href="{{ URL::action('AdminCartController@show',$item->id)}}" class="mail-text">{{$item->email}}</a>                                    
                         <div class="mail-date">{{$item->fecha_ins}}</div>
                 </div>
                 @endforeach
