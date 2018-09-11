@@ -23,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        //$mensajes=DB::table('tbl_contacto')->get();
+        //\Session::put('mensajes', $mensajes);
         return view('home');
     }
 }

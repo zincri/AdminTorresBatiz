@@ -23,6 +23,8 @@ Route::post('administrador/login', 'Auth\LoginController@index')->name('administ
 Route::get('administrador/home','HomeController@index')->name('administrador-home'); //ruta para ir al home admin
 Route::resource('administrador/usuarios','UsuariosController');
 Route::resource('administrador/mensajes','MensajesController');
+Route::resource('administrador/arrendamiento','AdminArrendamientoController');
+Route::resource('administrador/consumibles','AdminConsumiblesController');
 Route::resource('administrador/informacion','InformacionController');
 Route::resource('administrador/listaservicios','ListaServiciosController');
 Route::resource('administrador/slider','SliderController');
@@ -30,7 +32,6 @@ Route::resource('administrador/categorias','CategoriasController');
 Route::resource('administrador/productos','AdminProductosController');
 Route::resource('administrador/galeria','GaleriaController');
 Route::get('administrador/galeria/producto/{id}','GaleriaController@galeria');
-
 
 
 

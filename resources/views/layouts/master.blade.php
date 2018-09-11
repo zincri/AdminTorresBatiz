@@ -108,8 +108,8 @@
                         <a href="#"><span class="fa fa-sort-desc"></span> <span class="xn-text">Solicitudes</span></a>
                          <ul>
                             <li><a href="{{  url('administrador/mensajes')  }}"><span class="fa fa-image"></span> Mensajes</a></li>
-                            <li><a href="{{  url('informacion/colonias')  }}"><span class="fa fa-image"></span> Solicitudes arrendamiento</a></li>
-                            <li><a href="{{  url('informacion/colonias')  }}"><span class="fa fa-image"></span> Solicitudes consumibles</a></li>
+                            <li><a href="{{  url('administrador/arrendamiento')  }}"><span class="fa fa-image"></span> Solicitudes arrendamiento</a></li>
+                            <li><a href="{{  url('administrador/consumibles')  }}"><span class="fa fa-image"></span> Solicitudes consumibles</a></li>
                             <li><a href="{{  url('informacion/colonias')  }}"><span class="fa fa-image"></span> Solicitudes del carrito</a></li>
                                                              
                         </ul>
@@ -175,30 +175,14 @@
                                 </div>
                             </div>
                             <div class="panel-body list-group list-group-contacts scroll" style="height: 200px;">
+                                <!-- #################### #################### #################### #################### -->
                                 <a href="#" class="list-group-item">
                                     <div class="list-group-status status-online"></div>
                                     <img src="{{asset('images/users/user2.jpg')}}" class="pull-left" alt="John Doe"/>
                                     <span class="contacts-title">John Doe</span>
                                     <p>Praesent placerat tellus id augue condimentum</p>
                                 </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="list-group-status status-away"></div>
-                                    <img src="{{asset('images/users/user.jpg')}}" class="pull-left" alt="Dmitry Ivaniuk"/>
-                                    <span class="contacts-title">Dmitry Ivaniuk</span>
-                                    <p>Donec risus sapien, sagittis et magna quis</p>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="list-group-status status-away"></div>
-                                    <img src="{{asset('images/users/user3.jpg')}}" class="pull-left" alt="Nadia Ali"/>
-                                    <span class="contacts-title">Nadia Ali</span>
-                                    <p>Mauris vel eros ut nunc rhoncus cursus sed</p>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="list-group-status status-offline"></div>
-                                    <img src="{{asset('images/users/user6.jpg')}}" class="pull-left" alt="Darth Vader"/>
-                                    <span class="contacts-title">Darth Vader</span>
-                                    <p>I want my money back!</p>
-                                </a>
+                                
                             </div>     
                             <div class="panel-footer text-center">
                                 <a href="pages-messages.html">Show all messages</a>

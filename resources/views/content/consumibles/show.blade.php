@@ -9,7 +9,8 @@
                         <strong>Warning!</strong>Ocurrio un error, intentelo nuevamente por favor!
                     </div>
 ')!!}
-    <h2>Mensaje</h2>
+    <h2>Solicitud arrendamiento</h2>
+    
                                     <hr>
                                     <div class="row">
                                         
@@ -25,18 +26,18 @@
                                              </div>
                                              <div>
                                                 <div>
-                                                    <h3 class="panel-title"><strong>Asunto:</strong>  </h3>
+                                                    <h3 class="panel-title"><strong>Empresa:</strong>  </h3>
                                                 </div>
                                                 <div class="panel-body">
-                                                    <p>{{$datos->asunto}}</p>
+                                                    <p>{{$datos->empresa}}</p>
                                                     
                                                 </div>                                    
                                              </div>
                                         </div>
 
                                         <div class="col-md-6">
-                                        <div>
-                                                <div >
+                                            <div>
+                                                <div>
                                                     <h3 class="panel-title"><strong>Telefono: </strong> </h3>
                                                 </div>
                                                 <div class="panel-body">
@@ -50,14 +51,22 @@
                                                 </div>
                                                 <div class="panel-body">
                                                     <p>{{$datos->email}}</p>
-                                                    
                                                 </div>                                    
                                              </div>
                                              
-                                    </div>
+                                        </div>
                                     </div>
                                     <div class="row">
-                                        
+                                        <div class="col-md-6">
+                                            <div>
+                                                <div>
+                                                    <h3 class="panel-title"><strong>Modelo:</strong>  </h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <p>{{$datos->modelo}}</p>
+                                                </div>                                    
+                                             </div>
+                                        </div>
                                         <div class="col-md-6">
                                             <div>
                                                 <div>
@@ -65,16 +74,14 @@
                                                 </div>
                                                 <div class="panel-body">
                                                     <p>{{$datos->mensaje}}</p>
-                                                    
                                                 </div>                                    
                                              </div>
-                                             
                                         </div>
                                     </div>
 
 
                                 <div class="panel-footer">                                   
-                                   <a  href="{{url('administrador/mensajes')}}" ><button class="btn btn-primary pull-right">Atras</button></a> 
+                                   <a  href="{{url('administrador/consumibles')}}" ><button class="btn btn-primary pull-right">Atras</button></a> 
                                 </div>
                                 <br>
                                 
