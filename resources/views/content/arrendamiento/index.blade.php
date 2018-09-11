@@ -11,7 +11,7 @@
     <!-- START CONTENT FRAME TOP -->
     <div class="content-frame-top">                        
         <div class="page-title">                    
-            <h2><span class="fa fa-inbox"></span> Inbox <small>(3 unread)</small></h2>
+            <h2><span class="fa fa-inbox"></span> Solicitudes arrendamiento</h2>
         </div>                                                                                
         <!--
             <div class="pull-right">                            
@@ -50,7 +50,7 @@
             <div class="panel-body mail">
 
                 @foreach ($datos as $item)
-                <div class="mail-item mail-unread mail-info">                                    
+                <div class="mail-item mail-unread mail-{{($item->visto == 0) ?'danger':'info'}}">                                    
                         <div class="mail-checkbox">
                             <input type="checkbox" class="icheckbox"/>
                         </div>

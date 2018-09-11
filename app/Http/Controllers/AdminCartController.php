@@ -7,8 +7,7 @@ use DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
-
-class AdminConsumiblesController extends Controller
+class AdminCartController extends Controller
 {
     public function __construct()
     {
@@ -21,6 +20,7 @@ class AdminConsumiblesController extends Controller
      */
     public function index()
     {
+        //AQUI ME QUEDE
         $datos = DB::table('tbl_solicitudconsumibles')->where('activo','=',1)->get();
         return view('content.consumibles.index',['datos' => $datos]);
     }
@@ -54,20 +54,7 @@ class AdminConsumiblesController extends Controller
      */
     public function show($id)
     {
-        $datos=DB::table('tbl_solicitudconsumibles')->where('activo','=',1)->where('id','=',$id)->first();
-        if($datos==null){
-            return Redirect::to('administrador/consumibles')->withErrors(['erroregistro'=> 'Error']);
-        }
-        else{
-            $usuario=Auth::user()->id;
-            $du =  DB::table('tbl_solicitudconsumibles')
-            ->where('id', $id)
-            ->update([
-                'visto'=> 1,
-                'usuario_upd'=>$usuario
-            ]);
-            return view('content.consumibles.show',['datos' => $datos]);
-        }
+        //
     }
 
     /**

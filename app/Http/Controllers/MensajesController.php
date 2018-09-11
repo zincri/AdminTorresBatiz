@@ -13,6 +13,7 @@ class MensajesController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        
     }
     /**
      * Display a listing of the resource.
@@ -59,6 +60,13 @@ class MensajesController extends Controller
             return Redirect::to('administrador/mensajes')->withErrors(['erroregistro'=> 'Error']);
         }
         else{
+            $usuario=Auth::user()->id;
+            $du =  DB::table('tbl_contacto')
+            ->where('id', $id)
+            ->update([
+                'visto'=> 1,
+                'usuario_upd'=>$usuario
+            ]);
             return view('content.mensajes.show',['datos' => $datos]);
         }
     }

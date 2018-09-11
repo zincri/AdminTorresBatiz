@@ -11,14 +11,9 @@
     <!-- START CONTENT FRAME TOP -->
     <div class="content-frame-top">                        
         <div class="page-title">                    
-            <h2><span class="fa fa-inbox"></span> Inbox <small>(3 unread)</small></h2>
+            <h2><span class="fa fa-inbox"></span> Mensajes <small>{{ session('mensajes')? count(session('mensajes')) : 0 }} sin leer</small></h2>
         </div>                                                                                
-        <!--
-            <div class="pull-right">                            
-                <button class="btn btn-default"><span class="fa fa-cogs"></span> Settings</button>
-                <button class="btn btn-default content-frame-left-toggle"><span class="fa fa-bars"></span></button>
-            </div>
-        -->                        
+                                
     </div>
     <!-- END CONTENT FRAME TOP -->
     <!-- START CONTENT FRAME BODY -->
@@ -50,7 +45,7 @@
             <div class="panel-body mail">
 
                 @foreach ($datos as $item)
-                <div class="mail-item mail-unread mail-info">                                    
+                <div class="mail-item mail-unread mail-{{($item->visto == 0) ?'danger':'info'}}">                                    
                         <div class="mail-checkbox">
                             <input type="checkbox" class="icheckbox"/>
                         </div>

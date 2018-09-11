@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -14,6 +15,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        
     }
 
     /**
@@ -23,8 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //$mensajes=DB::table('tbl_contacto')->get();
-        //\Session::put('mensajes', $mensajes);
+        
         return view('home');
+        
+        
+        
+        
     }
 }

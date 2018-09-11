@@ -25,6 +25,7 @@ Route::resource('administrador/usuarios','UsuariosController');
 Route::resource('administrador/mensajes','MensajesController');
 Route::resource('administrador/arrendamiento','AdminArrendamientoController');
 Route::resource('administrador/consumibles','AdminConsumiblesController');
+Route::resource('administrador/carrito','AdminCartController');
 Route::resource('administrador/informacion','InformacionController');
 Route::resource('administrador/listaservicios','ListaServiciosController');
 Route::resource('administrador/slider','SliderController');

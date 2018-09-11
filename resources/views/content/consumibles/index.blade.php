@@ -50,7 +50,7 @@
             <div class="panel-body mail">
 
                 @foreach ($datos as $item)
-                <div class="mail-item mail-unread mail-info">                                    
+                <div class="mail-item mail-unread mail-{{($item->visto == 0) ?'danger':'info'}}">                                    
                         <div class="mail-checkbox">
                             <input type="checkbox" class="icheckbox"/>
                         </div>

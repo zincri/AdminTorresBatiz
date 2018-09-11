@@ -110,7 +110,7 @@
                             <li><a href="{{  url('administrador/mensajes')  }}"><span class="fa fa-image"></span> Mensajes</a></li>
                             <li><a href="{{  url('administrador/arrendamiento')  }}"><span class="fa fa-image"></span> Solicitudes arrendamiento</a></li>
                             <li><a href="{{  url('administrador/consumibles')  }}"><span class="fa fa-image"></span> Solicitudes consumibles</a></li>
-                            <li><a href="{{  url('informacion/colonias')  }}"><span class="fa fa-image"></span> Solicitudes del carrito</a></li>
+                            <li><a href="{{  url('administrador/carrito')  }}"><span class="fa fa-image"></span> Solicitudes del carrito</a></li>
                                                              
                         </ul>
                     </li>   
@@ -165,27 +165,43 @@
                     <!-- END SIGN OUT -->
                     <!-- MESSAGES -->
                     <li class="xn-icon-button pull-right">
+                        <?php
+                        /*CODIGO PHP*/ /*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*/
+                            $mensajes=DB::table('tbl_contacto')->where('activo','=',1)->where('visto','=',0)->get();
+                                $rows= count($mensajes);
+                                if($rows != 0){
+                                    session()->put('mensajes', $mensajes);
+                                }
+                                else{
+                                    session()->forget('mensajes');
+                                }
+                        /*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*/
+                        ?>
                         <a href="#"><span class="fa fa-comments"></span></a>
-                        <div class="informer informer-danger">4</div>
+                        <div class="informer informer-danger">{{ session('mensajes')? count(session('mensajes')) : 0 }}</div>
                         <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>                                
+                                <h3 class="panel-title"><span class="fa fa-comments"></span> Mensajes</h3>                                
                                 <div class="pull-right">
-                                    <span class="label label-danger">4 new</span>
+                                    <span class="label label-danger">{{ session('mensajes')? count(session('mensajes')) : 0}}</span>
                                 </div>
                             </div>
                             <div class="panel-body list-group list-group-contacts scroll" style="height: 200px;">
-                                <!-- #################### #################### #################### #################### -->
-                                <a href="#" class="list-group-item">
+                                   
+                                @if( session('mensajes') )
+                                @foreach(session('mensajes') as $item)
+                                <a href="{{ URL::action('MensajesController@show',$item->id)}}" class="list-group-item">
                                     <div class="list-group-status status-online"></div>
                                     <img src="{{asset('images/users/user2.jpg')}}" class="pull-left" alt="John Doe"/>
-                                    <span class="contacts-title">John Doe</span>
-                                    <p>Praesent placerat tellus id augue condimentum</p>
+                                    <span class="contacts-title">{{$item->nombre}}</span>
+                                    <p>{{$item->mensaje}}</p>
                                 </a>
+                                @endforeach
                                 
+                                @endif
                             </div>     
                             <div class="panel-footer text-center">
-                                <a href="pages-messages.html">Show all messages</a>
+                                <a href="{{  url('administrador/mensajes')  }}">Todos los mensajes</a>
                             </div>                            
                         </div>                        
                     </li>

@@ -59,6 +59,13 @@ class AdminArrendamientoController extends Controller
             return Redirect::to('administrador/arrendamiento')->withErrors(['erroregistro'=> 'Error']);
         }
         else{
+            $usuario=Auth::user()->id;
+            $du =  DB::table('tbl_solicitud')
+            ->where('id', $id)
+            ->update([
+                'visto'=> 1,
+                'usuario_upd'=>$usuario
+            ]);
             return view('content.arrendamiento.show',['datos' => $datos]);
         }
     }
