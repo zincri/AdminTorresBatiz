@@ -30,6 +30,7 @@ Route::resource('administrador/categorias','CategoriasController');
 Route::resource('administrador/productos','AdminProductosController');
 Route::resource('administrador/galeria','GaleriaController');
 Route::get('administrador/galeria/producto/{id}','GaleriaController@galeria');
+Route::resource('administrador/marcas','AdminMarcasController');
 
 
 
