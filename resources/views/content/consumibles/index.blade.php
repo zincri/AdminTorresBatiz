@@ -50,6 +50,7 @@
             <div class="panel-body mail">
 
                 @foreach ($datos as $item)
+                <a href="{{ URL::action('AdminConsumiblesController@show',$item->id)}}">
                 <div class="mail-item mail-unread mail-{{($item->visto == 0) ?'danger':'info'}}">                                    
                         <div class="mail-checkbox">
                             <input type="checkbox" class="icheckbox"/>
@@ -58,9 +59,10 @@
                             <span class="fa fa-star-o"></span>
                         </div>
                         <div class="mail-user">{{$item->nombre}}</div>                                    
-                            <a href="{{ URL::action('AdminConsumiblesController@show',$item->id)}}" class="mail-text">{{$item->empresa}}</a>                                    
+                        <div class="mail-text">{{$item->empresa}}</div>                                    
                         <div class="mail-date">{{$item->fecha_ins}}</div>
                 </div>
+                </a>
                 @endforeach
                 <!--
                 

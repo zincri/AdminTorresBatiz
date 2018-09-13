@@ -2,32 +2,33 @@
 
 @section('content')
 {!! $errors->first('erroregistro','
-                    <div class="alert alert-danger">
-                        <strong>Warning!</strong>Ocurrio un error, intentelo nuevamente por favor!
-                    </div>
+<div class="alert alert-danger">
+    <strong>Warning!</strong>Ocurrio un error, intentelo nuevamente por favor!
+</div>
 ')!!}
 <!-- START CONTENT FRAME -->
-<div class="content-frame">                                    
+<div class="content-frame">
     <!-- START CONTENT FRAME TOP -->
-    <div class="content-frame-top">                        
-        <div class="page-title">                    
+    <div class="content-frame-top">
+        <div class="page-title">
             <h2><span class="fa fa-inbox"></span> Solicitudes del carrito <small>(3 unread)</small></h2>
-        </div>                                                                                
+        </div>
         <!--
             <div class="pull-right">                            
                 <button class="btn btn-default"><span class="fa fa-cogs"></span> Settings</button>
                 <button class="btn btn-default content-frame-left-toggle"><span class="fa fa-bars"></span></button>
             </div>
-        -->                        
+        -->
     </div>
     <!-- END CONTENT FRAME TOP -->
     <!-- START CONTENT FRAME BODY -->
-    <div class="content-frame"> <!-- Aqui quite -body -->
-        
+    <div class="content-frame">
+        <!-- Aqui quite -body -->
+
         <div class="panel panel-default">
             <div class="panel-heading">
                 <label class="check mail-checkall">
-                    <input type="checkbox" class="icheckbox"/>
+                    <input type="checkbox" class="icheckbox" />
                 </label>
                 <!--
                 <div class="btn-group">
@@ -39,28 +40,30 @@
                 <div class="btn-group">
                     <button class="btn btn-default"><span class="fa fa-star"></span></button>
                 </div>
-                <button class="btn btn-default"><span class="fa fa-trash-o"></span></button>                                                                    
+                <button class="btn btn-default"><span class="fa fa-trash-o"></span></button>
                 <div class="pull-right" style="width: 150px;">
                     <div class="input-group">
                         <div class="input-group-addon"><span class="fa fa-calendar"></span></div>
-                        <input class="form-control datepicker" type="text" data-orientation="left"/>                                    
+                        <input class="form-control datepicker" type="text" data-orientation="left" />
                     </div>
                 </div>
             </div>
             <div class="panel-body mail">
 
                 @foreach ($datos as $item)
-                <div class="mail-item mail-unread mail-{{($item->visto == 0) ?'danger':'info'}}">                                    
+                <a href="{{ URL::action('AdminCartController@show',$item->id)}}">
+                    <div class="mail-item mail-unread mail-{{($item->visto == 0) ?'danger':'info'}}">
                         <div class="mail-checkbox">
-                            <input type="checkbox" class="icheckbox"/>
+                            <input type="checkbox" class="icheckbox" />
                         </div>
                         <div class="mail-star {{($item->favorito == 1) ? 'starred' : '' }}">
                             <span class="fa fa-star-o"></span>
                         </div>
-                        <div class="mail-user">{{$item->nombre}}</div>                                    
-                            <a href="{{ URL::action('AdminCartController@show',$item->id)}}" class="mail-text">{{$item->email}}</a>                                    
+                        <div class="mail-user">{{$item->nombre}}</div>
+                        <div class="mail-text">{{$item->email}}</div>
                         <div class="mail-date">{{$item->fecha_ins}}</div>
-                </div>
+                    </div>
+                </a>
                 @endforeach
                 <!--
                 
@@ -182,7 +185,7 @@
                 </div>                                
             -->
             </div>
-            <div class="panel-footer">  
+            <div class="panel-footer">
                 <!--                              
                 <div class="btn-group">
                     <button class="btn btn-default"><span class="fa fa-mail-reply"></span></button>
@@ -191,26 +194,26 @@
                 </div>
                 -->
                 <div class="btn-group">
-                    <button class="btn btn-default"><span class="fa fa-star"></span></button>                                    
-                    
+                    <button class="btn btn-default"><span class="fa fa-star"></span></button>
+
                 </div>
-                
-                <button class="btn btn-default"><span class="fa fa-trash-o"></span></button>                                    
-                
+
+                <button class="btn btn-default"><span class="fa fa-trash-o"></span></button>
+
                 <ul class="pagination pagination-sm pull-right">
                     <li class="disabled"><a href="#">«</a></li>
                     <li class="active"><a href="#">1</a></li>
                     <li><a href="#">2</a></li>
                     <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>                                    
+                    <li><a href="#">4</a></li>
                     <li><a href="#">»</a></li>
                 </ul>
-            </div>                            
+            </div>
         </div>
-        
+
     </div>
     <!-- END CONTENT FRAME BODY -->
 </div>
 <!-- END CONTENT FRAME -->
 
-@endsection 
+@endsection
