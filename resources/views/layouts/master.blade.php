@@ -207,6 +207,7 @@
                     </li>
                     <!-- END MESSAGES -->
                     <!-- TASKS -->
+                    <!--
                     <li class="xn-icon-button pull-right">
                         <a href="#"><span class="fa fa-tasks"></span></a>
                         <div class="informer informer-warning">3</div>
@@ -252,6 +253,7 @@
                             </div>                            
                         </div>                        
                     </li>
+                    -->
                     <!-- END TASKS -->
                 </ul>
                 <!-- END X-NAVIGATION VERTICAL -->                     
