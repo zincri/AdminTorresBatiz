@@ -38,23 +38,23 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group {{$errors->has('descripcionlarga') ? 'has-error':''}}">
+                                    <!-- <div class="form-group {{$errors->has('descripcionlarga') ? 'has-error':''}}">
                                         <label class="col-md-3 col-xs-12 control-label">Descripcion larga</label>
                                         <div class="col-md-6 col-xs-12">                                            
                                             <textarea class="form-control" rows="5" name="descripcionlarga">{{old('descripcionlarga')}}</textarea>
                                             {!! $errors->first('descripcionlarga','<span class="help-block">:message</span>')!!}
                                         </div>
                                         
-                                    </div>
+                                    </div> -->
 
-                                    <div class="form-group {{$errors->has('descripcioncorta') ? 'has-error':''}}">
+                                    <!-- <div class="form-group {{$errors->has('descripcioncorta') ? 'has-error':''}}">
                                         <label class="col-md-3 col-xs-12 control-label">Descripcion corta</label>
                                         <div class="col-md-6 col-xs-12">                                            
                                             <textarea class="form-control" rows="5" name="descripcioncorta">{{old('descripcioncorta')}}</textarea>
                                             {!! $errors->first('descripcioncorta','<span class="help-block">:message</span>')!!}
                                         </div>
                                         
-                                    </div>
+                                    </div> -->
 
                                     <div class="form-group {{$errors->has('stock') ? 'has-error':''}}">
                                         <label class="col-md-3 col-xs-12 control-label">Stock</label>
