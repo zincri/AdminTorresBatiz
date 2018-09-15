@@ -13,6 +13,7 @@
                     <th>Nombre</th>
                     <th>email</th>
                     <th>Fecha</th>
+                    <th>Visto</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -22,6 +23,11 @@
                     <td>{{$item->nombre}}</td>
                     <td>{{$item->email}}</td>
                     <td>{{$item->fecha_ins}}</td>
+                    @if ($item->visto == 0)
+                        <td>Sin Leer <span style="color:red" class="fa fa-eye"></span></td>
+                    @else
+                        <td>Leído <span style="color:green" class="fa fa-eye"></span></td>
+                    @endif
                     <td>
                         <a href="{{URL::action('AdminCartController@show',$item->id)}}"><button class="btn btn-info"><i
                                     class="fa fa-eye"></i></button></a>

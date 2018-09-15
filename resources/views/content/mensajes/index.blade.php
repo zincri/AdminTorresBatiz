@@ -11,8 +11,9 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Email</th>
+                    <th>Asunto</th>
                     <th>Fecha</th>
+                    <th>Leído</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -22,6 +23,11 @@
                     <td>{{$item->nombre}}</td>
                     <td>{{$item->asunto}}</td>
                     <td>{{$item->fecha_ins}}</td>
+                    @if ($item->visto == 0)
+                        <td>Sin Leer <span style="color:red" class="fa fa-eye"></span></td>
+                    @else
+                        <td>Leído <span style="color:green" class="fa fa-eye"></span></td>
+                    @endif
                     <td>
                         <a href="{{URL::action('MensajesController@show',$item->id)}}"><button class="btn btn-info"><i
                                     class="fa fa-eye"></i></button></a>

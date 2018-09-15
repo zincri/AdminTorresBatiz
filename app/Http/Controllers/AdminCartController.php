@@ -55,6 +55,14 @@ class AdminCartController extends Controller
     public function show($id)
     {
         $datos=DB::table('tbl_solicitudcart')->where('activo','=',1)->where('id','=',$id)->first();
+        
+        $sql_sol = "call sp_getObjetos
+            (
+                '".$id."'
+            )";
+        $productos = DB::select($sql_sol,array(1,10));
+        
+        
         if($datos==null){
             return Redirect::to('administrador/carrito')->withErrors(['erroregistro'=> 'Error']);
         }
@@ -66,7 +74,7 @@ class AdminCartController extends Controller
                 'visto'=> 1,
                 'usuario_upd'=>$usuario
             ]);
-            return view('content.carrito.show',['datos' => $datos]);
+            return view('content.carrito.show',['datos' => $datos, 'productos' => $productos]);
         }
     }
 
