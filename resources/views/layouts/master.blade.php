@@ -85,21 +85,21 @@
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-sort-desc"></span> <span class="xn-text">Promociones</span></a>
                          <ul>
-                            <li><a href="{{  url('informacion/redes_sociales')  }}"><span class="fa fa-image"></span> Lista de promociones</a></li>
+                            <li><a href="{{ url('administrador/promociones') }}"><span class="fa fa-image"></span> Lista de promociones</a></li>
                                                              
                         </ul>
                     </li>   
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-sort-desc"></span> <span class="xn-text">Marcas</span></a>
                          <ul>
-                            <li><a href="{{  url('informacion/mensajes')  }}"><span class="fa fa-image"></span> Nuestras marcas</a></li>
+                            <li><a href="{{  url('administrador/marcas')  }}"><span class="fa fa-image"></span> Nuestras marcas</a></li>
                                                              
                         </ul>
                     </li>              
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-sort-desc"></span> <span class="xn-text">Sucursales</span></a>
                          <ul>
-                            <li><a href="{{  url('informacion/usuarios')  }}"><span class="fa fa-image"></span> Nuestras sucursales</a></li>
+                            <li><a href="{{  url('administrador/sucursales')  }}"><span class="fa fa-image"></span> Nuestras sucursales</a></li>
                                                          
                         </ul>
                     </li>
@@ -108,9 +108,9 @@
                         <a href="#"><span class="fa fa-sort-desc"></span> <span class="xn-text">Solicitudes</span></a>
                          <ul>
                             <li><a href="{{  url('administrador/mensajes')  }}"><span class="fa fa-image"></span> Mensajes</a></li>
-                            <li><a href="{{  url('administrador/arrendamiento')  }}"><span class="fa fa-image"></span> Solicitudes arrendamiento</a></li>
-                            <li><a href="{{  url('administrador/consumibles')  }}"><span class="fa fa-image"></span> Solicitudes consumibles</a></li>
-                            <li><a href="{{  url('administrador/carrito')  }}"><span class="fa fa-image"></span> Solicitudes del carrito</a></li>
+                            <li><a href="{{  url('informacion/colonias')  }}"><span class="fa fa-image"></span> Solicitudes arrendamiento</a></li>
+                            <li><a href="{{  url('informacion/colonias')  }}"><span class="fa fa-image"></span> Solicitudes consumibles</a></li>
+                            <li><a href="{{  url('informacion/colonias')  }}"><span class="fa fa-image"></span> Solicitudes del carrito</a></li>
                                                              
                         </ul>
                     </li>   
@@ -165,43 +165,43 @@
                     <!-- END SIGN OUT -->
                     <!-- MESSAGES -->
                     <li class="xn-icon-button pull-right">
-                        <?php
-                        /*CODIGO PHP*/ /*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*/
-                            $mensajes=DB::table('tbl_contacto')->where('activo','=',1)->where('visto','=',0)->get();
-                                $rows= count($mensajes);
-                                if($rows != 0){
-                                    session()->put('mensajes', $mensajes);
-                                }
-                                else{
-                                    session()->forget('mensajes');
-                                }
-                        /*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*//*CODIGO PHP*/
-                        ?>
                         <a href="#"><span class="fa fa-comments"></span></a>
-                        <div class="informer informer-danger">{{ session('mensajes')? count(session('mensajes')) : 0 }}</div>
+                        <div class="informer informer-danger">4</div>
                         <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span class="fa fa-comments"></span> Mensajes</h3>                                
+                                <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>                                
                                 <div class="pull-right">
-                                    <span class="label label-danger">{{ session('mensajes')? count(session('mensajes')) : 0}}</span>
+                                    <span class="label label-danger">4 new</span>
                                 </div>
                             </div>
                             <div class="panel-body list-group list-group-contacts scroll" style="height: 200px;">
-                                   
-                                @if( session('mensajes') )
-                                @foreach(session('mensajes') as $item)
-                                <a href="{{ URL::action('MensajesController@show',$item->id)}}" class="list-group-item">
+                                <a href="#" class="list-group-item">
                                     <div class="list-group-status status-online"></div>
                                     <img src="{{asset('images/users/user2.jpg')}}" class="pull-left" alt="John Doe"/>
-                                    <span class="contacts-title">{{$item->nombre}}</span>
-                                    <p>{{$item->mensaje}}</p>
+                                    <span class="contacts-title">John Doe</span>
+                                    <p>Praesent placerat tellus id augue condimentum</p>
                                 </a>
-                                @endforeach
-                                
-                                @endif
+                                <a href="#" class="list-group-item">
+                                    <div class="list-group-status status-away"></div>
+                                    <img src="{{asset('images/users/user.jpg')}}" class="pull-left" alt="Dmitry Ivaniuk"/>
+                                    <span class="contacts-title">Dmitry Ivaniuk</span>
+                                    <p>Donec risus sapien, sagittis et magna quis</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <div class="list-group-status status-away"></div>
+                                    <img src="{{asset('images/users/user3.jpg')}}" class="pull-left" alt="Nadia Ali"/>
+                                    <span class="contacts-title">Nadia Ali</span>
+                                    <p>Mauris vel eros ut nunc rhoncus cursus sed</p>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <div class="list-group-status status-offline"></div>
+                                    <img src="{{asset('images/users/user6.jpg')}}" class="pull-left" alt="Darth Vader"/>
+                                    <span class="contacts-title">Darth Vader</span>
+                                    <p>I want my money back!</p>
+                                </a>
                             </div>     
                             <div class="panel-footer text-center">
-                                <a href="{{  url('administrador/mensajes')  }}">Todos los mensajes</a>
+                                <a href="pages-messages.html">Show all messages</a>
                             </div>                            
                         </div>                        
                     </li>
@@ -367,6 +367,7 @@
         <script type="text/javascript" src="{{ asset('js/plugins/fileinput/fileinput.min.js')}}"></script>        
         @stack('select')
         @stack('mapa')
+        @stack('addProductsToPromo')
         <!-- END TEMPLATE -->
         <!-- END SCRIPTS -->         
     </body>
