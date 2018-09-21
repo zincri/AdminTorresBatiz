@@ -73,7 +73,6 @@
     </div>
 </div>
 <!-- end section -->
-<div class="fb-comments" data-width="100%" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>
 
 <!-- section -->
 <div class="section padding_layout_1 testmonial_section white_fonts">

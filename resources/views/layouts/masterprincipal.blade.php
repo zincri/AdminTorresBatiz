@@ -71,14 +71,6 @@
 </head>
 
 <body id="default_theme" class="home_1 shopping-cart">
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.1&appId=424211048016672&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
     <!-- loader -->
     <div class="bg_load"> <img class="loader_animation" src="{{asset('images/logoTorres.png')}}" alt="#" /> </div>
     <!-- end loader -->
@@ -190,32 +182,6 @@
 
 
     <!--***************************************************************************************-->
-    <!-- Modal -->
-      <div class="modal fade" id="search_bar" role="dialog">
-         <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-               <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
-               </div>
-               <div class="modal-body">
-                  <div class="row">
-                     <div class="col-lg-8 col-md-8 col-sm-8 offset-lg-2 offset-md-2 offset-sm-2 col-xs-10 col-xs-offset-1">
-                        <div class="navbar-search">
-                           <form action="#" method="get" id="search-global-form" class="search-global">
-                              <input type="text" placeholder="Ingrese su búsqueda" autocomplete="off" name="s" id="search" value="" class="search-global__input">
-                              <button class="search-global__btn"><i class="fa fa-search"></i></button>
-                              <!--<div class="search-global__note">Begin typing your search above and press return to search.</div>-->
-                           </form>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- End Model search bar -->
-
 
     <!-- footer -->
     <footer class="footer_style_2 footer_blog">

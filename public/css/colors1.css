@@ -89,10 +89,11 @@ footer h2::after,
     background: #fff !important;
     max-width: 450px !important;
     width: 100% !important;
-    min-width: 500px !important;
+    height: 200px !important;
+    min-width: 450px !important;
     border: solid #0e7 7px !important;
     text-align: center;
-    padding: 38px 10px !important;
+    padding: 50px 10px !important;
 }
 
 .tp-caption.tp-shape.tp-shapewrapper.tp-resizeme.rs-parallaxlevel-0.comodidad {
