@@ -11,7 +11,7 @@
             <!-- END META SECTION -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
             <!-- CSS INCLUDE -->        
-            <link rel="stylesheet" type="text/css" id="theme" href="{{ asset('css/theme-default.css')}}"/>
+            <link rel="stylesheet" type="text/css" id="theme" href="{{ asset('css/theme-torres.css')}}"/>
             <!-- EOF CSS INCLUDE -->   
             <link rel="stylesheet" href="{{ asset('css/font-awesome.css')}}">
             
@@ -103,6 +103,8 @@
                                                          
                         </ul>
                     </li>
+
+                    <!-- Añadí los enlaces de Promociones, Marcas y Sucursales, ya no lo marca porque hice commit antes -->
 
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-sort-desc"></span> <span class="xn-text">Solicitudes</span></a>
@@ -310,7 +312,7 @@
                         <p>Presione No si desea continuar trabajando. Presione Sí para desconectarse del usuario actual.</p>
                     </div>
                     <div class="mb-footer">
-                        <div class="pull-right">
+                        <div class="pull-right signOutAlert">
                         
                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" class="btn btn-success btn-lg">Si</a>

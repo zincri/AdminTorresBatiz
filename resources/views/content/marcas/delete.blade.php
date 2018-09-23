@@ -14,5 +14,6 @@
                     </div>
                 </div>
             </div>
+            <!-- Aquí todo es nuevo, no lo marca por el commit de antes -->
 {{Form::Close()}}
 </div>

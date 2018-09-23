@@ -37,7 +37,7 @@ Route::resource('administrador/marcas','AdminMarcasController');
 Route::resource('administrador/sucursales','AdminSucursalesController');
 
 
-
+// Añadí las 3 últimas rutas
 
 
 

@@ -38,9 +38,10 @@
             <button class="btn btn-primary pull-right" type="submit">Guardar</button>
         </div>
     
-        
+        <!-- Aquí todo es nuevo, no lo marca por el commit de antes -->
 
     </div>
 </div>
 {!!Form::close()!!} 
 @endsection
+

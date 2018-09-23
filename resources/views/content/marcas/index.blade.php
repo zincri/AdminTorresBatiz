@@ -38,4 +38,5 @@
                                
                             <!-- END DEFAULT DATATABLE -->
                             </div>       
+                            <!-- Aquí todo es nuevo, no lo marca por el commit de antes -->
 @endsection

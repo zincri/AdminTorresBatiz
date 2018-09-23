@@ -70,3 +70,4 @@ class AdminMarcasController extends Controller
         return Redirect::to('administrador/productos');
     }
 }
+// TODO ES NUEVO, SOLO YA NO LO MARCA PORQUE LO SUBÍ ANTES
