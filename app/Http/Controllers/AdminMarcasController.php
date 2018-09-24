@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Post;
 class AdminMarcasController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $marcas = DB::table('tbl_catmarcas')
         ->where('activo','=',1)

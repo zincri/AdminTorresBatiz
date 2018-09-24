@@ -40,7 +40,9 @@
                 <!-- START X-NAVIGATION -->
                 <ul class="x-navigation">
                     <li class="xn-logo">
-                        <a href="home">Torres Batiz</a>
+                        <a href="home"><figure>
+                            <img src="{{ asset('imageupload/torresAdmin/torresLogo.svg') }}" alt="">
+                        </figure></a>
                         <a href="#" class="x-navigation-control"></a>
                     </li>
                     <li class="xn-profile">
@@ -69,6 +71,14 @@
                             <li><a href="{{  url('administrador/informacion')  }}"><span class="fa fa-image"></span> Informacion General</a></li>
                             <li><a href="{{  url('administrador/listaservicios')  }}"><span class="fa fa-image"></span> Lista de servicios</a></li>
                             <li><a href="{{  url('administrador/slider')  }}"><span class="fa fa-image"></span> Presentaciones de inicio</a></li>
+                            <li><a href="{{  url('administrador/proyectos')  }}"><span class="fa fa-image"></span> Proyectos realizados</a></li>
+                            <li><a href="{{  url('administrador/infoASC')  }}"><span class="fa fa-image"></span> Arrendamiento, Soporte y Consumibles</a></li>
+                        </ul>
+                    </li>
+                    <li class="xn-openable">
+                        <a href="#"><span class="fa fa-sort-desc"></span> <span class="xn-text">Noticias</span></a>
+                        <ul>
+                            <li><a href="{{  url('administrador/noticias')  }}"><span class="fa fa-image"></span> Ver Noticias</a></li>
                         </ul>
                     </li>
                     
@@ -152,9 +162,7 @@
                     <!-- SIGN OUT -->
                     <li class="xn-icon-button pull-right">
                                                
-                                    <a class="mb-control" data-box="#mb-signout" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    <a class="mb-control" data-box="#mb-signout" href="{{ route('logout') }}">
                                                      <span class="fa fa-sign-out"></span>
 
                                         

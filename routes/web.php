@@ -35,6 +35,9 @@ Route::get('administrador/galeria/producto/{id}','GaleriaController@galeria');
 Route::resource('administrador/promociones','AdminPromocionesController');
 Route::resource('administrador/marcas','AdminMarcasController');
 Route::resource('administrador/sucursales','AdminSucursalesController');
+Route::resource('administrador/noticias','AdminNoticiasController');
+Route::resource('administrador/proyectos','AdminProyectosController');
+Route::resource('administrador/infoASC','AdminASCController');
 
 
 // Añadí las 3 últimas rutas

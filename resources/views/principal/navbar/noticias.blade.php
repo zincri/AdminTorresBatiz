@@ -1,4 +1,5 @@
-@extends ('layouts.masterprincipal') @section ('content')
+@extends ('layouts.masterprincipal') 
+@section ('content')
 
 <!-- inner page banner -->
 <div id="inner_banner" class="section inner_banner_section">
@@ -46,6 +47,7 @@
                 </div>
             </div>
             @endforeach
+            
             <div class="row paginationPart">
                     {{ $noticia->links() }}
                 </div>

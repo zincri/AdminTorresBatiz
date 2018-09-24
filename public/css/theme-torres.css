@@ -1071,7 +1071,7 @@ body.page-container-boxed .page-container {
     text-align: center;
     font-size: 17px;
     line-height: 28px;
-    color: #AAA;
+    color: #fff;
     left: 10px;
     top: 10px;
     z-index: 2;
@@ -1403,7 +1403,7 @@ body.page-container-boxed .page-container {
 
 .x-navigation.x-navigation-minimized .profile {
     width: 220px;
-    background: #1b1e24;
+    background: #fff;
     position: absolute;
     top: 4px;
     right: -230px;
@@ -1411,6 +1411,7 @@ body.page-container-boxed .page-container {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 .x-navigation.x-navigation-minimized li.active .profile {
@@ -1976,7 +1977,7 @@ a.list-group-item:focus {
     line-height: 30px;
     display: block;
     float: left;
-    color: #0dc644;
+    color: #000;
 }
 
 .panel .panel-footer {
@@ -2556,8 +2557,12 @@ ul.panel-controls>li>.dropdown-menu:before {
 }
 
 .btn-info {
-    background-color: #1caf9a;
-    border-color: #1caf9a;
+    background-color: #fff;
+    border-color: #fff;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 40px;
 }
 
 .btn-info:hover,
@@ -2565,8 +2570,12 @@ ul.panel-controls>li>.dropdown-menu:before {
 .btn-info:active,
 .btn-info.active,
 .open>.dropdown-toggle.btn-info {
-    background-color: #29b2e1;
-    border-color: #29b2e1;
+    background-color: #0dc644;
+    border-color: #fff;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
 }
 
 .btn-info[disabled],
@@ -4818,9 +4827,9 @@ td.dataTables_empty {
 }
 
 .login-container .login-box .login-logo {
-    background: url("../img/logo.png") top center no-repeat;
+    background: url("../imageupload/torresAdmin/torresLogo.svg") top center no-repeat;
     width: 100%;
-    height: 50px;
+    height: 80px;
     float: left;
     margin-bottom: 10px;
 }
@@ -4914,11 +4923,12 @@ td.dataTables_empty {
 }
 
 .login-container.lightmode {
-    background: url("../img/backgrounds/wall_1.jpg") left top no-repeat;
+    background-color: #e8e8e8;
 }
 
 .login-container.lightmode .login-box .login-body {
-    background: rgba(255, 255, 255, 0.2);
+    background-color: rgba(13, 198, 68, 0.8);
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.8);
 }
 
 .login-container.lightmode .login-box .login-body .form-control {

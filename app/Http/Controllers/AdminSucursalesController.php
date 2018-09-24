@@ -12,6 +12,10 @@ use App\Http\Controllers\Post;
 
 class AdminSucursalesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $sucursales = DB::table('tbl_sucursal')
         ->where("activo","=",1)

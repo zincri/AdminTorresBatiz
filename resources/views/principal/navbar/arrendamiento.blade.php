@@ -66,10 +66,8 @@
                             </figure>
                         </div>
                         <div class="service_cont">
-                            <h3 class="service_head"><a href="#">Tenemos una Solución para cada una de tus necesidades</a></h3>
-                            <p>Somos distribuidores autorizados de la marca Ricoh<br> Olvídate del mantenimiento del equipo, Torres Batiz se encarga de brindarte el soporte, asesoría y consumibles necesarios en sitio.<br> Contamos con personal certificado
-                                para acesorarte en los equipos multifuncionales de acuerdo a tus necesidades
-                            </p>
+                            <h3 class="service_head"><a href="#">{{$info->titulo}}</a></h3>
+                            <p>{{ $info->descripcion }}</p>
 
                             <div class="row">
                                 <!--FORMULARIO-->
