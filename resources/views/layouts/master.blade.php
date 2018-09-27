@@ -377,6 +377,7 @@
         <script type="text/javascript" src="{{ asset('js/plugins/fileinput/fileinput.min.js')}}"></script>        
         @stack('select')
         @stack('mapa')
+        @stack('addElementsToForm')
         @stack('addProductsToPromo')
         <!-- END TEMPLATE -->
         <!-- END SCRIPTS -->         

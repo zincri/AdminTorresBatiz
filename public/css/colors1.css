@@ -87,12 +87,12 @@ footer h2::after,
 
 .tp-caption.tp-shape.tp-shapewrapper.tp-resizeme.rs-parallaxlevel-0 {
     background: #fff !important;
-    max-width: 450px !important;
+    /* max-width: 450px !important;
     width: 100% !important;
-    min-width: 500px !important;
+    min-width: 500px !important; */
     border: solid #0e7 7px !important;
     text-align: center;
-    padding: 38px 10px !important;
+    padding: 28px 10px !important;
 }
 
 .tp-caption.tp-shape.tp-shapewrapper.tp-resizeme.rs-parallaxlevel-0.comodidad {

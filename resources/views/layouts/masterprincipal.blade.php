@@ -65,6 +65,7 @@
         .shoppingCartItem span{
             visibility: {{$count>0 ? 'visible' : 'hidden'}} !important;
         }
+        
     </style>
     
     @endif

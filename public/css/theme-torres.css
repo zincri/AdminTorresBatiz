@@ -2423,7 +2423,8 @@ ul.panel-controls>li>.dropdown-menu:before {
 
 .btn {
     font-size: 12px;
-    padding: 4px 15px;
+    padding: 10px 15px;
+    margin: 2%;
     line-height: 20px;
     font-weight: 400;
     -moz-border-radius: 0px;
@@ -2434,6 +2435,11 @@ ul.panel-controls>li>.dropdown-menu:before {
     -ms-transition: all 200ms ease;
     -o-transition: all 200ms ease;
     transition: all 200ms ease;
+}
+
+.btn i {
+    display: block;
+    margin: auto;
 }
 
 .btn.btn-lg,
@@ -2474,6 +2480,7 @@ ul.panel-controls>li>.dropdown-menu:before {
 .btn-danger {
     background-color: #E04B4A;
     border-color: #E04B4A;
+    border-radius: 10px 0px;
 }
 
 .btn-danger:hover,
@@ -2494,6 +2501,7 @@ ul.panel-controls>li>.dropdown-menu:before {
 .btn-warning {
     background-color: #fe970a;
     border-color: #fe970a;
+    border-radius: 10px 0px;
 }
 
 .btn-warning:hover,
@@ -9158,6 +9166,10 @@ a {
     border-radius: 5px !important;
     background-color: transparent;
     cursor: pointer;
+}
+
+.imgInfoGeneral img {
+    width: 100% !important;
 }
 
 @media only screen and (max-width:800px) and (min-width: 320px) {

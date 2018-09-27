@@ -1,7 +1,7 @@
 @extends ('layouts.masterprincipal') @section ('content')
 
 <!-- inner page banner -->
-<div id="inner_banner" class="section inner_banner_section">
+<div id="inner_banner" style="background-image: url('{{$informaciongeneral->imagenbannersecundario}}')" class="section inner_banner_section">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

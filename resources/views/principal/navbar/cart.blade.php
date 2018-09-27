@@ -4,7 +4,7 @@
     <p style="color: #fff; text-align: center;">Usted ha enviado su solicitud de cotización. Torres Batiz se comunicará con usted posteriormente.</p>
 </div>
 <!-- inner page banner -->
-<div id="inner_banner" class="section inner_banner_section">
+<div id="inner_banner" style="background-image: url('{{$informaciongeneral->imagenbannersecundario}}')" class="section inner_banner_section">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
