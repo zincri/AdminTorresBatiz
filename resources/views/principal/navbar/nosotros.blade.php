@@ -3,7 +3,7 @@
     
 .gross_layout.right_gross_layout::after {
     position: absolute;
-    background: url(../images/layout_img/dark_bg_img2.png) !important;
+    background: url("{{ $informaciongeneral->imagennosotros }}") !important;
     width: 35%;
     height: 100%;
     left: 0;
@@ -13,7 +13,7 @@
     background-position: right;
 }
 </style>
-<div id="inner_banner" class="section inner_banner_section">
+<div id="inner_banner" style="background-image: url('{{$informaciongeneral->imagenbannersecundario}}')" class="section inner_banner_section">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -73,6 +73,7 @@
     </div>
 </div>
 <!-- end section -->
+<div class="fb-comments" data-width="100%" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>
 
 <!-- section -->
 <div class="section padding_layout_1 testmonial_section white_fonts">

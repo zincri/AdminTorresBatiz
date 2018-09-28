@@ -71,6 +71,14 @@
 </head>
 
 <body id="default_theme" class="home_1 shopping-cart">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.1&appId=424211048016672&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <!-- loader -->
     <div class="bg_load"> <img class="loader_animation" src="{{asset('images/logoTorres.png')}}" alt="#" /> </div>
     <!-- end loader -->

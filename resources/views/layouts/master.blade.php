@@ -11,7 +11,7 @@
             <!-- END META SECTION -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
             <!-- CSS INCLUDE -->        
-            <link rel="stylesheet" type="text/css" id="theme" href="{{ asset('css/theme-default.css')}}"/>
+            <link rel="stylesheet" type="text/css" id="theme" href="{{ asset('css/theme-torres.css')}}"/>
             <!-- EOF CSS INCLUDE -->   
             <link rel="stylesheet" href="{{ asset('css/font-awesome.css')}}">
             
@@ -69,6 +69,14 @@
                             <li><a href="{{  url('administrador/informacion')  }}"><span class="fa fa-image"></span> Informacion General</a></li>
                             <li><a href="{{  url('administrador/listaservicios')  }}"><span class="fa fa-image"></span> Lista de servicios</a></li>
                             <li><a href="{{  url('administrador/slider')  }}"><span class="fa fa-image"></span> Presentaciones de inicio</a></li>
+                            <li><a href="{{  url('administrador/proyectos')  }}"><span class="fa fa-image"></span> Proyectos realizados</a></li>
+                            <li><a href="{{  url('administrador/infoASC')  }}"><span class="fa fa-image"></span> Arrendamiento, Soporte y Consumibles</a></li>
+                        </ul>
+                    </li>
+                    <li class="xn-openable">
+                        <a href="#"><span class="fa fa-sort-desc"></span> <span class="xn-text">Noticias</span></a>
+                        <ul>
+                            <li><a href="{{  url('administrador/noticias')  }}"><span class="fa fa-image"></span> Ver Noticias</a></li>
                         </ul>
                     </li>
                     
@@ -85,24 +93,25 @@
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-sort-desc"></span> <span class="xn-text">Promociones</span></a>
                          <ul>
-                            <li><a href="{{  url('informacion/redes_sociales')  }}"><span class="fa fa-image"></span> Lista de promociones</a></li>
+                            <li><a href="{{ url('administrador/promociones') }}"><span class="fa fa-image"></span> Lista de promociones</a></li>
                                                              
                         </ul>
-                    </li>   
+                    </li>     
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-sort-desc"></span> <span class="xn-text">Marcas</span></a>
                          <ul>
-                            <li><a href="{{  url('informacion/mensajes')  }}"><span class="fa fa-image"></span> Nuestras marcas</a></li>
+                            <li><a href="{{  url('administrador/marcas')  }}"><span class="fa fa-image"></span> Nuestras marcas</a></li>
                                                              
                         </ul>
-                    </li>              
+                    </li>               
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-sort-desc"></span> <span class="xn-text">Sucursales</span></a>
                          <ul>
-                            <li><a href="{{  url('informacion/usuarios')  }}"><span class="fa fa-image"></span> Nuestras sucursales</a></li>
+                            <li><a href="{{  url('administrador/sucursales')  }}"><span class="fa fa-image"></span> Nuestras sucursales</a></li>
                                                          
                         </ul>
                     </li>
+
 
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-sort-desc"></span> <span class="xn-text">Solicitudes</span></a>

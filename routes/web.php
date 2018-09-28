@@ -34,6 +34,14 @@ Route::resource('administrador/productos','AdminProductosController');
 Route::resource('administrador/galeria','GaleriaController');
 Route::get('administrador/galeria/producto/{id}','GaleriaController@galeria');
 
+// Recién añadidas
+Route::resource('administrador/promociones','AdminPromocionesController');
+Route::resource('administrador/marcas','AdminMarcasController');
+Route::resource('administrador/sucursales','AdminSucursalesController');
+Route::resource('administrador/noticias','AdminNoticiasController');
+Route::resource('administrador/proyectos','AdminProyectosController');
+Route::resource('administrador/infoASC','AdminASCController');
+
 
 
 

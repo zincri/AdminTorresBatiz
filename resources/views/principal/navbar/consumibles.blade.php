@@ -1,7 +1,7 @@
 @extends ('layouts.masterprincipal') @section ('content')
 
 <!-- inner page banner -->
-<div id="inner_banner" class="section inner_banner_section">
+<div id="inner_banner" style="background-image: url('{{$informaciongeneral->imagenbannersecundario}}')" class="section inner_banner_section">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -30,9 +30,8 @@
                     <div class="full">
                         <div class="service_img"> <img class="img-responsive" src="images/torresimages/img-consumibles.jpg" alt="#"> </div>
                         <div class="service_cont">
-                            <h3 class="service_head"><a href="#">Interior Design</a></h3>
-                            <p>Consumibles y refacciones genuinos de Ricoh.
-                            </p>
+                        <h3 class="service_head"><a href="#">{{$info->titulo}}</a></h3>
+                            <p>{{ $info->descripcion }}</p>
                             <p></p>
                             <div class="bt_cont">
                                 <div class="formularioArrendatario">

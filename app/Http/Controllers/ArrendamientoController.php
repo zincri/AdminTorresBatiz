@@ -33,12 +33,17 @@ class ArrendamientoController extends Controller
         $videos = DB::table('tbl_catvideos')->where('activo','=',1)->get();
         $video=$videos->first();
         $noticia = DB::table('tbl_noticias')->where('activo','=',1)->orderBy('fecha_ins','desc')->first();
+        $info = DB::table('tbl_infoasc')
+        ->where('pagina','=','arrendamiento')
+        ->where('activo','=',1)
+        ->first();
         
         return view('principal.navbar.arrendamiento',["informaciongeneral"=>$informaciongeneral,
                                             "marcas"=>$marcas,
                                             "videos"=>$videos,
                                             "video"=>$video,
-                                            "noticia"=>$noticia]);
+                                            "noticia"=>$noticia,
+                                            "info"=>$info]);
     }
 
     /**
