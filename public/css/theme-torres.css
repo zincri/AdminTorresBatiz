@@ -2786,7 +2786,10 @@ input[type=checkbox] {
 
 .form-control[disabled],
 .form-control[readonly] {
-    color: #CCC;
+    color: #000;
+    margin-bottom: 3%;
+    height: auto !important;
+    resize: none;
 }
 
 .form-control[disabled]:focus,
@@ -9181,6 +9184,86 @@ a {
         width: 20% !important;
     }
 }
+
+
+/* Mensajes */
+
+.clickableRow {
+    transition: ease all 0.2s;
+}
+
+.clickableRow:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    margin: 1% 0%;
+    background-color: rgba(0, 0, 0, 0.3);
+    transform-origin: 0% 50%;
+}
+
+.tableMensajes {
+    overflow: hidden;
+}
+
+.notificationIcon.disabled {
+    visibility: hidden;
+}
+
+.notificationIcon:after {
+    width: 110px;
+    position: absolute;
+    content: "¡Tienes mensajes!";
+    background-color: #f44d2f;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    left: 102%;
+    padding: 1%;
+    top: 15px;
+    animation: mensajeIcon 3s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes mensajeIcon {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.mensajesMenu,
+.mensajesMenu ul li {
+    position: relative;
+}
+
+.pendienteIcon::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 15px 0px 15px 15px;
+    border-color: transparent transparent transparent #f44d2f;
+    top: 5px;
+    animation: inOut infinite linear 3s;
+}
+
+@keyframes inOut {
+    0%,
+    100% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+}
+
+.pendienteIcon.disabled {
+    visibility: hidden;
+}
+
+
+/* End Mensajes */
 
 
 /* End added classes */

@@ -30,7 +30,7 @@
                         <div class="service_img">
                             <!-- <img class="img-responsive" src="images/torresimages/Eqp-MP-6055-40.jpg" alt="#"> -->
                             <figure id="imagenMultifuncional">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 974.33 487.34"><defs><style>.cls-1,.cls-12,.cls-4{fill:none;}.cls-2{fill:#4bb597;}.cls-3{font-size:20px;}.cls-3,.cls-9{font-family:MicrosoftSansSerif, Microsoft Sans Serif;}.cls-4{stroke:#3d995e;stroke-linecap:round;stroke-width:2px;stroke-dasharray:1 6;}.cls-10,.cls-11,.cls-12,.cls-4,.cls-8{stroke-miterlimit:10;}.cls-5{fill:#237a40;}.cls-6{clip-path:url(#clip-path);}.cls-7{fill:#4bb56e;}.cls-8{fill:#211915;}.cls-12,.cls-8{stroke:#211915;}.cls-9{font-size:12px;fill:#fff;}.cls-10{fill:#020201;}.cls-10,.cls-11{stroke:#020302;}.cls-11{fill:#020302;}</style><clipPath id="clip-path"><rect class="cls-1" x="420.3" y="213.26" width="146.46" height="207.37"/></clipPath></defs><title>Animate</title><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 974.33 487.34"><defs><style>.cls-1,.cls-12,.cls-4{fill:none;}.cls-2{fill:#4bb597;}.cls-3{font-size:20px;}.cls-3,.cls-9{font-family:MicrosoftSansSerif, Microsoft Sans Serif;}.cls-4{stroke:#3d995e;stroke-linecap:round;stroke-width:2px;stroke-dasharray:1 6;}.cls-10,.cls-11,.cls-12,.cls-4,.cls-8{stroke-miterlimit:10;}.cls-5{fill:#237a40;}.cls-6{clip-path:url(#clip-path);}.cls-7{fill:#4bb56e;}.cls-8{fill:#211915;}.cls-12,.cls-8{stroke:#211915;}.cls-9{font-size:12px;fill:#fff;}.cls-10{fill:#020201;}.cls-10,.cls-11{stroke:#020302;}.cls-11{fill:#020302;}</style><clipPath id="clip-path"><rect class="cls-1" x="420.3" y="213.26" width="146.46" height="207.37"/></clipPath></defs><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1">
 
                               <rect class="cls-2 cuadroMonitoreo" x="129.03" y="353.08" width="127.61" height="43.17" rx="10" ry="10"/><rect class="cls-2 cuadroTotalgreen" x="866" y="361.26" width="108.33" height="43.17" rx="10" ry="10"/>
                               <rect class="cls-2 cuadroFacilidad" x="842.33" y="162.47" width="127.67" height="51" rx="10" ry="10"/>
@@ -163,99 +163,99 @@
                                         </div>
                                     </div>
                                 </div>
-                            <!--- SECCION NOTICIAS -->
+                                <!--- SECCION NOTICIAS -->
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- end section -->
+    <!-- end section -->
 
-<!-- section -->
-<div class="section padding_layout_1 testmonial_section white_fonts">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="full">
-                    <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ul class="carousel-indicators">
-                            <li data-target="#testimonial_slider" data-slide-to="0" class="active"></li>
-                            @foreach($videos as $item)
-                            <li data-target="#testimonial_slider" data-slide-to="{{$item->id}}"></li>
-                            @endforeach
-                            <!-- <li data-target="#testimonial_slider" data-slide-to="1"></li>
+    <!-- section -->
+    <div class="section padding_layout_1 testmonial_section white_fonts">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="full">
+                        <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ul class="carousel-indicators">
+                                <li data-target="#testimonial_slider" data-slide-to="0" class="active"></li>
+                                @foreach($videos as $item)
+                                <li data-target="#testimonial_slider" data-slide-to="{{$item->id}}"></li>
+                                @endforeach
+                                <!-- <li data-target="#testimonial_slider" data-slide-to="1"></li>
                            <li data-target="#testimonial_slider" data-slide-to="2"></li> -->
-                        </ul>
-                        <!-- The slideshow -->
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="testimonial-container"><iframe width="100%" height="315" src="{{$informaciongeneral->videoprincipal}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                            @foreach($videos as $item)
-                            <div class="carousel-item">
-                                <div class="testimonial-container">
-                                    <iframe width="100%" height="315" src="{{$item->video}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                    <div class="testimonial-content">
+                            </ul>
+                            <!-- The slideshow -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="testimonial-container"><iframe width="100%" height="315" src="{{$informaciongeneral->videoprincipal}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                     </div>
                                 </div>
+                                @foreach($videos as $item)
+                                <div class="carousel-item">
+                                    <div class="testimonial-container">
+                                        <iframe width="100%" height="315" src="{{$item->video}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                        <div class="testimonial-content">
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="full"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end section -->
+    <!-- section -->
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="contact_us_section">
+                            <div class="call_icon"> <img src="images/layout_img/phone_icon.png" alt="#" /> </div>
+                            <div class="inner_cont">
+                                <h2>Si tiene alguna duda, contáctenos</h2>
+                                <p>Puede comunicarse con nosotros al teléfono <strong>{{$informaciongeneral->telefono}}</strong>. O llene una solicitud dando click en Contáctenos</p>
+                            </div>
+                            <div class="button_Section_cont"> <a class="btn dark_gray_bt" href="/contacto">Contáctenos</a> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end section -->
+    <!-- section -->
+    <div class="section padding_layout_1" style="padding: 50px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full">
+                        <ul class="brand_list">
+                            @foreach($marcas as $item)
+                            <li><img class="img-responsive2" src="{{$item->imagen}}" alt="#" /></li>
                             @endforeach
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-5">
-                <div class="full"> </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end section -->
-<!-- section -->
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="full">
-                    <div class="contact_us_section">
-                        <div class="call_icon"> <img src="images/layout_img/phone_icon.png" alt="#" /> </div>
-                        <div class="inner_cont">
-                            <h2>Si tiene alguna duda, contáctenos</h2>
-                            <p>Puede comunicarse con nosotros al teléfono <strong>{{$informaciongeneral->telefono}}</strong>. O llene una solicitud dando click en Contáctenos</p>
-                        </div>
-                        <div class="button_Section_cont"> <a class="btn dark_gray_bt" href="/contacto">Contáctenos</a> </div>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- end section -->
-<!-- section -->
-<div class="section padding_layout_1" style="padding: 50px 0;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="full">
-                    <ul class="brand_list">
-                        @foreach($marcas as $item)
-                        <li><img class="img-responsive2" src="{{$item->imagen}}" alt="#" /></li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end section -->
+    <!-- end section -->
 
-
+</div>
 @endsection @push('validacion')
 <script type="text/javascript" src="{{ asset('js/validarsolicitud.js') }}"></script>
 @endpush

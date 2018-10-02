@@ -112,11 +112,12 @@ class ArrendamientoController extends Controller
         if($datos_solicitud != null)
         {
             
-            return Redirect::to('/arrendamiento');
+            // return Redirect::to('/arrendamiento');
+            return Redirect::to('/arrendamiento')->with("success","Hemos recibido su solicitud. Nos comunicaremos con usted en su brevedad.");
         }
         else
         {
-            return "Problemas en base de datos";
+            return Redirect::to('/arrendamiento')->with("error","Ha ocurrido un error al enviar su formulario. Inténtelo más tarde.");
         }
     }
 

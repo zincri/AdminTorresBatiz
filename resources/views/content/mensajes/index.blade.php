@@ -7,19 +7,19 @@
                     </div>
 ')!!}
 <div class="panel-body table-responsive">
-        <table class="table datatable">
+        <table class="table datatable tableMensajes">
             <thead>
                 <tr>
                     <th>Nombre</th>
                     <th>Asunto</th>
                     <th>Fecha</th>
                     <th>Leído</th>
-                    <th>Acciones</th>
+                    
                 </tr>
             </thead>
             <tbody>
                 @foreach($datos as $item)
-                <tr>
+                <tr class="clickableRow" data-href="{{ URL::action('MensajesController@show',$item->id) }}">
                     <td>{{$item->nombre}}</td>
                     <td>{{$item->asunto}}</td>
                     <td>{{$item->fecha_ins}}</td>
@@ -28,11 +28,7 @@
                     @else
                         <td>Leído <span style="color:green" class="fa fa-eye"></span></td>
                     @endif
-                    <td>
-                        <a href="{{URL::action('MensajesController@show',$item->id)}}"><button class="btn btn-info"><i
-                                    class="fa fa-eye"></i></button></a>
-                        
-                    </td>
+                   
                 </tr>
                 @endforeach
     
@@ -42,4 +38,14 @@
         <!-- END DEFAULT DATATABLE -->
     </div>
 
-@endsection 
+@endsection
+@push('clickableRow')
+<script>
+    $(document).ready(()=>{
+        $(document).on("click",".clickableRow",function() {
+        window.location = $(this).data("href");
+        });
+    });
+    
+</script>
+@endpush

@@ -112,14 +112,56 @@
                         </ul>
                     </li>
 
+                    <?php
 
-                    <li class="xn-openable">
+                    // CÓDIGO PARA CONTROLAR LOS PUNTOS DE MENSAJES
+                    $iconoGeneral = false;
+                    $showMensajes = false;
+                    $showArrendamiento = false;
+                    $showConsumibles = false;
+                    $showCarrito = false;
+                    $iconoMensajes = DB::table('tbl_contacto')->where('activo','=',1)->where('visto','=',0)->get();
+                    $iconoArrendamiento = DB::table('tbl_solicitud')->where('activo','=',1)->where('visto','=',0)->get();
+                    $iconoConsumibles = DB::table('tbl_solicitudconsumibles')->where('activo','=',1)->where('visto','=',0)->get();
+                    $iconoCarrito = DB::table('tbl_solicitudcart')->where('activo','=',1)->where('visto','=',0)->get();
+                    // dd(count($iconoMensajes));
+                    if(count($iconoArrendamiento) != 0 || count($iconoCarrito) != 0 || count($iconoConsumibles) != 0 || count($iconoMensajes) != 0){
+                      $iconoGeneral = true;
+                    }
+                    if(count($iconoArrendamiento) != 0){
+                        $showArrendamiento = true;
+                    }
+                    if(count($iconoCarrito) != 0){
+                        $showCarrito = true;
+                    }
+                    if(count($iconoConsumibles) != 0){
+                        $showConsumibles = true;
+                    }
+                    if(count($iconoMensajes) != 0){
+                        $showMensajes = true;
+                    }
+
+                    
+
+                    ?>
+
+
+                    <li class="xn-openable mensajesMenu">
+                        <span class="{{$iconoGeneral == true ? 'notificationIcon' : 'notificationIcon disabled'}}"></span>
                         <a href="#"><span class="fa fa-sort-desc"></span> <span class="xn-text">Solicitudes</span></a>
                          <ul>
-                            <li><a href="{{  url('administrador/mensajes')  }}"><span class="fa fa-image"></span> Mensajes</a></li>
-                            <li><a href="{{  url('administrador/arrendamiento')  }}"><span class="fa fa-image"></span> Solicitudes arrendamiento</a></li>
-                            <li><a href="{{  url('administrador/consumibles')  }}"><span class="fa fa-image"></span> Solicitudes consumibles</a></li>
-                            <li><a href="{{  url('administrador/carrito')  }}"><span class="fa fa-image"></span> Solicitudes del carrito</a></li>
+                            <li>
+                                <span class="{{$showMensajes == true ? 'pendienteIcon' : 'pendienteIcon disabled'}}"></span>
+                                <a href="{{  url('administrador/mensajes')  }}"><span class="fa fa-image"></span> Mensajes</a></li>
+                            <li>
+                                <span class="{{$showArrendamiento == true ? 'pendienteIcon' : 'pendienteIcon disabled'}}"></span>
+                                <a href="{{  url('administrador/arrendamiento')  }}"><span class="fa fa-image"></span> Solicitudes arrendamiento</a></li>
+                            <li>
+                                <span class="{{$showConsumibles == true ? 'pendienteIcon' : 'pendienteIcon disabled'}}"></span>
+                                <a href="{{  url('administrador/consumibles')  }}"><span class="fa fa-image"></span> Solicitudes consumibles</a></li>
+                            <li>
+                                <span class="{{$showCarrito == true ? 'pendienteIcon' : 'pendienteIcon disabled'}}"></span>
+                                <a href="{{  url('administrador/carrito')  }}"><span class="fa fa-image"></span> Solicitudes del carrito</a></li>
                                                              
                         </ul>
                     </li>   
@@ -159,9 +201,7 @@
                     <!-- SIGN OUT -->
                     <li class="xn-icon-button pull-right">
                                                
-                                    <a class="mb-control" data-box="#mb-signout" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    <a class="mb-control" data-box="#mb-signout">
                                                      <span class="fa fa-sign-out"></span>
 
                                         
@@ -321,7 +361,7 @@
                         <p>Presione No si desea continuar trabajando. Presione Sí para desconectarse del usuario actual.</p>
                     </div>
                     <div class="mb-footer">
-                        <div class="pull-right">
+                        <div class="pull-right signOutAlert">
                         
                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" class="btn btn-success btn-lg">Si</a>
@@ -378,6 +418,7 @@
         <script type="text/javascript" src="{{ asset('js/plugins/fileinput/fileinput.min.js')}}"></script>        
         @stack('select')
         @stack('mapa')
+        @stack('clickableRow')
         <!-- END TEMPLATE -->
         <!-- END SCRIPTS -->         
     </body>

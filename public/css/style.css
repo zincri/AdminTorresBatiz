@@ -5200,4 +5200,47 @@ galeriaProducto figure {
 }
 
 
+/* Notificación Formulario */
+
+.containerFixed {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 10;
+}
+
+.containerFixed .messageBox h3 {
+    color: #F89E10;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.containerFixed .messageBox h3,
+.containerFixed .messageBox p {
+    text-align: center;
+}
+
+.containerFixed .messageBox {
+    transition: ease all 0.2s;
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    padding: 3% 0%;
+    border: 3px solid #F89E10;
+}
+
+
+/* End notificación formulario */
+
+
 /*End classes*/
