@@ -54,7 +54,7 @@
                         <div class="mapcontainer">
                             <div class="contend">
                                 <div class="service_blog sucursal">
-                                    <div class="service_img">
+                                    <div >
                                         <iframe src="{{$item->urlgooglemaps}}" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                                     </div>
                                     <div class="service_head">

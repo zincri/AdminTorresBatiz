@@ -115,6 +115,7 @@ class CartController extends Controller
                 )";
                 $dato = DB::select($sql_sol,array(1,10));
             }
+            \Session::forget('cart');
             return Redirect::to('cart/show')->with("success","Hemos recibido su solicitud. Nos comunicaremos con usted en su brevedad.");
         }
         else

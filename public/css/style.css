@@ -2084,6 +2084,11 @@ div.large_cont_p p {
 .service_img {
     position: relative;
     overflow: hidden;
+    width: 100%;
+}
+
+.service_img.cat {
+    height: 200px;
 }
 
 .service_blog:hover img,
@@ -2117,6 +2122,13 @@ div.large_cont_p p {
     color: #fff;
     font-weight: 500;
     font-size: 24px;
+}
+
+.service_head.cat {
+    height: 94px;
+    vertical-align: middle;
+    display: list-item;
+    text-align: center;
 }
 
 .service_head h5 {
@@ -3233,6 +3245,7 @@ span.skill {
 }
 
 .product_img {
+    height: 254px;
     overflow: hidden;
 }
 

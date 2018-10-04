@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-{!!Form::model($datos,array('method'=>'PATCH','route'=>['productos.update',$datos->id],'files' => 'true'))!!}
+{!!Form::model($datos,array('method'=>'PATCH','action'=>['AdminProductosController@update',$datos->id],'files' => 'true'))!!} 
 {{Form::token()}}
                 <div class="form-horizontal">
                 <div class="panel panel-default">

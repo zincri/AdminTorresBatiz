@@ -66,7 +66,7 @@
                                             <input
                                               
                                               step="1"
-                                              min="1" max="5" 
+                                              min="1" max="20" 
                                               id="product_{{ $item->id }}"
                                               name="product_{{ $item->id }}"
                                               value="{{$item->cantidad}}"
@@ -158,7 +158,7 @@
                                                 </div>
                                                 @if( count(\Session::get('cart')) != 0 )
                                                 <br>
-                                                <button type="submit">Enviar formulario</button>
+                                                <button type="submit">Enviar cotización</button>
                                                 @else
                                                 <br>
                                                 <div class="alert alert-warning">

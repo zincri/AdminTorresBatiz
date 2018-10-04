@@ -1328,7 +1328,6 @@ body.page-container-boxed .page-container {
 .profile .profile-image img {
     width: 100px;
     height: 100px;
-    border: 3px solid #ff9f40;
     -moz-border-radius: 20%;
     -webkit-border-radius: 20%;
     border-radius: 20%;
@@ -1360,7 +1359,7 @@ body.page-container-boxed .page-container {
     width: 30px;
     height: 30px;
     font-size: 14px;
-    color: #B44;
+    color: #0dc644;
     border: 2px solid #0dc644;
     line-height: 25px;
     position: absolute;

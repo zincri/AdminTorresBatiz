@@ -36,8 +36,8 @@ class AdminASCController extends Controller
                 'file'=>'required|mimes:jpg,jpeg,png|max:1000'
             ]);
             $opcion=1;
-            $titulo=$request->get('titulo');
-            $descripcion=$request->get('descripcion');
+            $titulo=$request->get('tituloInfo');
+            $descripcion=$request->get('descInfo');
             $usuario=Auth::user()->id;
             /*OBTENER IMAGEN ANTERIOR*/ 
             $datos = DB::table('tbl_infoasc')->where('id','=',$id)->where('activo','=',1)->first();

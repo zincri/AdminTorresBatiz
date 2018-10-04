@@ -39,10 +39,10 @@
             <div class="col-md-4">
             <a href="{{ route('send-categoria',['id' => $item->id])}}">
                 <div class="service_blog">
-                    <div class="service_img">
+                    <div class="service_img cat">
                         <img class="img-responsive" src="{{$item->imagen}}" alt="#">
                     </div>
-                    <div class="service_head">
+                    <div class="service_head cat">
                         <h5>{{$item->nombre}}</h5>
                     </div>
                 </div>
