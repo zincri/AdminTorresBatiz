@@ -51,9 +51,10 @@ class SliderController extends Controller
         $credentials=$this->validate(request(),[
             'titulo' => 'required|string|max:99',
             'tituloglobo' => 'required|string|max:99',
-            'file'=>'required|mimes:jpg,jpeg,png|max:1000'
+            'file'=>'required|mimes:jpg,jpeg,png|max:10000'
         ]);
         if($request->file('file')){
+            
             $path= Storage::disk('public')->put('imageupload/slider', $request->file('file'));
             $imagen=asset($path);
             $opcion=1;
@@ -129,7 +130,7 @@ class SliderController extends Controller
         if($request->file('file')){
             
             $credentials=$this->validate(request(),[
-                'file'=>'required|mimes:jpg,jpeg,png|max:1000'
+                'file'=>'required|mimes:jpg,jpeg,png|max:10000'
             ]);
 
             $path= Storage::disk('public')->put('imageupload/slider', $request->file('file'));

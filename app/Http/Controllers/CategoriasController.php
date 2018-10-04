@@ -130,7 +130,7 @@ class CategoriasController extends Controller
         if($request->file('file')){
            
             $credentials=$this->validate(request(),[
-                'file'=>'required|mimes:jpg,jpeg,png|max:1000'
+                'file'=>'required|mimes:jpg,jpeg,png|max:5000'
             ]);
             $path= Storage::disk('public')->put('imageupload/categorias', $request->file('file'));
             $imagen=asset($path);

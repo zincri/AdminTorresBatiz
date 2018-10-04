@@ -51,9 +51,10 @@
                             <p>{{$producto->descripcioncorta}}<br>
                                 <span class="stock">{{$producto->stock}} in stock</span>
                             </p>
+                            
                             <form class="cart" method="post" action="" >
                                 <div class="quantity">
-                                    <input id="quantity" step="1" min="1" max="5" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" type="number">
+                                    <input id="quantity" step="1" min="1" max="20" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" type="number">
                                 </div>
                                 <a href="{{ route('cart-add',['id'=>$producto->id, 'cantidad'=>1])}}"
                                    id="hrefa" name="hrefa" >
@@ -62,16 +63,7 @@
                             </form>
                         </div>
                         <a href="{{ route('cart-show') }}"><button type="button" class="btn sqaure_bt">Ver carrito</button></a>
-                        <div class="share-post">
-                            <a href="#" class="share-text">Compartir</a>
-                            <ul class="social_icons">
-                                @foreach(session('redes') as $item)
-                                <li>
-                                    <a class="{{$item->icono}}" href="{{$item->url}}" title="{{$item->nombre}}" target="_blank"></a>
-                                </li>
-                                @endforeach
-                            </ul>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="row">
@@ -94,6 +86,11 @@
                                     <div id="galeriaProducto" class="tab-pane fade">
                                         <div class="product_review">
                                             <div class="commant-text row">
+                                            <div class="col-md-3">
+                                                    <figure>
+                                                        <img class="imagenProductoDescripcion" src="{{ asset($producto->imagen) }}" alt="#" />
+                                                    </figure>
+                                                </div>
 
                                                 @foreach($galeria as $item)
                                                 <div class="col-md-3">

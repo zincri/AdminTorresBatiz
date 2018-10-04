@@ -111,11 +111,16 @@ class AdminProductosController extends Controller
         //$combo=DB::table('tbl_categoriaproducto')->where('activo','=',1)->get();
         /**/
         $datos = DB::table('tbl_producto')->where('id','=',$id)->where('activo','=',1)->first();
+        
         if($datos==null){
             return Redirect::to('administrador/productos')->withErrors(['erroregistro'=> 'Error']);
         }
+        $categoria = DB::table('tbl_categoriaproducto')
+        ->where('activo','=',1)
+        ->where('id','=',$datos->idcategoriaproducto)
+        ->first();
         $galeria = DB::table('tbl_galeria')->where('idproducto','=',$id)->where('activo','=',1)->get();
-        return view('content.productos.show',['datos'=>$datos, 'galeria' => $galeria]);
+        return view('content.productos.show',['datos'=>$datos, 'galeria' => $galeria, 'categoria'=>$categoria]);
     }
 
     /**
@@ -150,12 +155,12 @@ class AdminProductosController extends Controller
             'descripcioncorta' => 'required|string|max:1499',
             'descripcionlarga' => 'required|string|max:2999',
             'categoriaproducto' => 'required',
-            //'file'=>'required|mimes:jpg,jpeg,png|max:1000',
+            // 'file'=>'required|mimes:jpg,jpeg,png|max:1000',
             'stock' => 'required|numeric|max:1000000'
         ]);
         if($request->file('file')){
             $this->validate(request(),[
-                'file'=>'required|mimes:jpg,jpeg,png|max:1000'
+                'file'=>'required|mimes:jpg,jpeg,png|max:5000'
             ]);
             $opcion=2;
             $nombreproducto=$request->get('nombreproducto');

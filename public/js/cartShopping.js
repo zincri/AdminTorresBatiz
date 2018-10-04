@@ -92,5 +92,5 @@ $(".aquiestalaclase").on('click', function(e) {
 
 $("#galeriaProducto img").on("click", function() {
     $(".imagenGrandeDescripcion").attr("src", $(this).attr('src'));
-    $(window).scrollTop(0);
+    $(window).scrollTop(400);
 });

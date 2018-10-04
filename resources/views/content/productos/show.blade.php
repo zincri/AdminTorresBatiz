@@ -57,7 +57,7 @@
                                                     <h3 class="panel-title"><strong>Categoria del producto: </strong> </h3>
                                                 </div>
                                                 <div class="panel-body">
-                                                    <p>{{$datos->idcategoriaproducto}}</p>
+                                                    <p>{{$categoria->nombre}}</p>
                                                     
                                                 </div>                                    
                                              </div>

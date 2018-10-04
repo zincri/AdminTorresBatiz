@@ -87,13 +87,17 @@ footer h2::after,
 
 .tp-caption.tp-shape.tp-shapewrapper.tp-resizeme.rs-parallaxlevel-0 {
     background: #fff !important;
-    max-width: 450px !important;
+    max-width: 475px !important;
     width: 100% !important;
     height: 200px !important;
-    min-width: 450px !important;
+    min-width: 475px !important;
     border: solid #0e7 7px !important;
     text-align: center;
-    padding: 50px 10px !important;
+    padding: 40px 0px !important;
+}
+
+.tp-parallax-wrap {
+    /* top: 318px !important; */
 }
 
 .tp-caption.tp-shape.tp-shapewrapper.tp-resizeme.rs-parallaxlevel-0.comodidad {

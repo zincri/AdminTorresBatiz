@@ -40,7 +40,7 @@
 @push('clickableRow')
 <script>
     $(document).ready(()=>{
-        $(".clickableRow").click(function() {
+        $(document).on("click",".clickableRow",function() {
         window.location = $(this).data("href");
         });
     });

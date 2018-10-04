@@ -45,11 +45,11 @@
                     </li>
                     <li class="xn-profile">
                         <a href="#" class="profile-mini">
-                            <img src="{{asset('images/logogo.jpg')}}" alt="Torres Betiz"/>
+                            <img src="{{asset('images/logo.png')}}" alt="Torres Betiz"/>
                         </a>
                         <div class="profile">
                             <div class="profile-image">
-                                <img src="{{asset('images/logogo.jpg')}}" alt="Torres Batiz"/>
+                                <img src="{{asset('images/logo.png')}}" alt="Torres Batiz"/>
                             </div>
                             <div class="profile-data">
                                 <div class="profile-data-name">{{ Auth::user()->name }}</div>
@@ -192,11 +192,7 @@
                     </li>
                     <!-- END TOGGLE NAVIGATION -->
                     <!-- SEARCH -->
-                    <li class="xn-search">
-                        <form role="form">
-                            <input type="text" name="search" placeholder="Search..."/>
-                        </form>
-                    </li>   
+                      
                     <!-- END SEARCH -->
                     <!-- SIGN OUT -->
                     <li class="xn-icon-button pull-right">
@@ -308,10 +304,7 @@
                 <!-- END X-NAVIGATION VERTICAL -->                     
 
                 <!-- START BREADCRUMB -->
-                <ul class="breadcrumb">
-                    <li><a href="#">Home</a></li>                    
-                    <li class="active">Dashboard</li>
-                </ul>
+               
                 <!-- END BREADCRUMB -->    
                 
                 
