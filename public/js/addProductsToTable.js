@@ -9,6 +9,8 @@ var temp = [];
 
 
 $(".addProduct").click(function() {
+    
+    /*
     var validate = true;
     var nombre = $(this).parent().parent()[0].children[1].innerText;
     var idProducto = $(this).parent().parent()[0].children[0].innerText;
@@ -21,6 +23,7 @@ $(".addProduct").click(function() {
         temp.push(idProducto);
         $(".addedProducts tbody").append("<tr><td class='dontShow' name='idProducto'>" + idProducto + "</td><td name='nombreProducto'>" + nombre + "</td><td><input type='number' value='1' min='1' name='cantidad' id='cantidad'></td><td><button type='button' class='removeProduct'><i class='fa fa-times'></i></button></td></tr>");
     }
+    */
 
 });
 
