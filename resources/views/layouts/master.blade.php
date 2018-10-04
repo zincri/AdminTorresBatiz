@@ -377,7 +377,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
         <script type="text/javascript" src="{{ asset('js/plugins/fileinput/fileinput.min.js')}}"></script>        
         @stack('select')
-        @stack('mapa')
+        @stack('mapa')addProductsToPromo
+        @stack('addProductsToPromo')
         <!-- END TEMPLATE -->
         <!-- END SCRIPTS -->         
     </body>
