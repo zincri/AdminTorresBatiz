@@ -94,11 +94,11 @@ class ContactoController extends Controller
 
         if($datos_solicitud != null)
         {
-            return Redirect::to('/contacto');
+            return Redirect::to('/contacto')->with("success","Hemos recibido su solicitud. Nos comunicaremos con usted en su brevedad.");
         }
         else
         {
-            return "Problemas en base de datos";
+            return Redirect::to('/contacto')->with("error","Ha ocurrido un error al enviar su formulario. Inténtelo más tarde.");
         }
     }
 

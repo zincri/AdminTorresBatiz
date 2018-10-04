@@ -115,12 +115,12 @@ class CartController extends Controller
                 )";
                 $dato = DB::select($sql_sol,array(1,10));
             }
-            return Redirect::to('cart/show');
+            return Redirect::to('cart/show')->with("success","Hemos recibido su solicitud. Nos comunicaremos con usted en su brevedad.");
         }
         else
         {
-            return "Problemas en base de datos";
-        } 
+            return Redirect::to('cart/show')->with("error","Ha ocurrido un error al enviar su formulario. Inténtelo más tarde.");
+        }
     }
 
     /**
@@ -141,23 +141,19 @@ class CartController extends Controller
 
     public function add($id, $cantidad)
     {
+        try{
         $mensaje = "";
         $flag=false;
         $a=DB::table('tbl_productogeneral')->where('activo','=',1)->where('id','=',$id)->first();
-        
         $cart=\Session::get('cart');
-        
         $entid=(int)$id;
         foreach($cart as $item){
             $entero=(int)$item->id;
             if($entero == $entid) {
                 $flag=true;
-                $mensaje = "success";
                 break;   
             }
-            else{
-                $mensaje = "error";//esta mal este mensaje aqui
-            }
+           
         }
         if($flag==true){
             $cantidadnueva=(int)$cart[$id]->cantidad;
@@ -171,8 +167,13 @@ class CartController extends Controller
             $cart[$id]=$a;
             \Session::put('cart',$cart);
         }
-        return redirect()->route('producto-detalle',['producto' => $id])->with('message',$mensaje);
         
+        return redirect()->route('producto-detalle',['producto' => $id])->with('message',"success");
+        }
+        catch(Exception $e){
+        return redirect()->route('producto-detalle',['producto' => $id])->with('message',"error");
+            
+        }
         
         
     }
