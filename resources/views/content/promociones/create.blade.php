@@ -91,6 +91,6 @@
 @endsection
 
 @push('addProductsToPromo')
-<script type="text/javascript" src="{{ asset('js/addProductsToTable.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/addProduct.js') }}"></script>
 
 @endpush
