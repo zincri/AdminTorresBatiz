@@ -4,7 +4,7 @@
                 <div class="mb-middle">
                     <div class="mb-title"><span class="fa fa-times"></span> Eliminar Registro</div>
                     <div class="mb-content">
-                        <p>¿Esta seguro que desea eliminar este registro?</p>
+                        <p>Â¿Esta seguro que desea eliminar este registro?</p>
                     </div>
                     <div class="mb-footer">
                         

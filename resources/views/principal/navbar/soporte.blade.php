@@ -50,12 +50,12 @@
                     <p class="enlaceBlog"><a href="/noticias">Ver más</a></p>
                 </div>
                 <div class="side_bar_blog">
-                    <h4>Vídeos Destacados</h4>
+                    <h4>Vídeo Destacado</h4>
                     <div class="recent_post">
                         <ul>
                             <li>
                                 <p class="post_head"><a href="#">Video</a></p>
-                                <iframe width="100%" height="315" src="{{$video->video}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                <iframe width="100%" height="315" src="{{$informaciongeneral->videoprincipal}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             </li>
                         </ul>
                     </div>
