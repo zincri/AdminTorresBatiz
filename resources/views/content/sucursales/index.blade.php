@@ -14,10 +14,10 @@
                                         <thead>
                                             <tr>
                                                 <th>Nombre de la sucursal</th>
-                                                <th>Dirección de la sucursal</th>
+                                                <th>DirecciÃ³n de la sucursal</th>
                                                 <th>Email</th>
                                                 <th>URL de Google Maps</th>
-                                                <th>Teléfonos</th>
+                                                <th>TelÃ©fonos</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>

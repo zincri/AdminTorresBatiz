@@ -22,7 +22,7 @@
             </div>
 
             <div class="form-group {{$errors->has('direccionSucursal') ? 'has-error':''}}">
-                <label class="col-md-3 col-xs-12 control-label">Dirección de la sucursal</label>
+                <label class="col-md-3 col-xs-12 control-label">DirecciÃ³n de la sucursal</label>
                 <div class="col-md-6 col-xs-12">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
@@ -46,7 +46,7 @@
             </div>
 
             <div class="form-group {{$errors->has('urlGoogleMaps') ? 'has-error':''}}">
-                <label class="col-md-3 col-xs-12 control-label">Dirección de Google Maps</label>
+                <label class="col-md-3 col-xs-12 control-label">DirecciÃ³n de Google Maps</label>
                 <div class="col-md-6 col-xs-12">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
@@ -58,7 +58,7 @@
             </div>
 
             <div class="form-group {{$errors->has('telefonoPrincipal') ? 'has-error':''}}">
-                <label class="col-md-3 col-xs-12 control-label">Teléfono Principal</label>
+                <label class="col-md-3 col-xs-12 control-label">TelÃ©fono Principal</label>
                 <div class="col-md-6 col-xs-12">
                     <div class="input-group">
                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
@@ -74,7 +74,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <button type="button" class="addPhones"><i class="fa fa-plus-circle"></i> Añadir otro teléfono</button>
+                    <button type="button" class="addPhones"><i class="fa fa-plus-circle"></i> AÃ±adir otro telÃ©fono</button>
                 </div>
             </div>
 
