@@ -23,6 +23,10 @@ class InicioController extends Controller
         $proyectosrealizados = DB::table('tbl_proyectosrealizados')->where('activo','=',1)->get();
         $videos = DB::table('tbl_catvideos')->where('activo','=',1)->get();
         $slider = DB::table('tbl_slider')->where('activo','=',1)->get();
+        $promociones = DB::table('tbl_promociones')
+        ->where('activo','=',1)
+        ->limit(6)
+        ->get();
         
         session()->put('informacion', $informaciongeneral);
         session()->put('sucursales', $sucursales);
@@ -36,7 +40,8 @@ class InicioController extends Controller
                                      "serviciosprincipal"=>$serviciosprincipal,
                                      "proyectosrealizados"=>$proyectosrealizados,
                                      "videos"=>$videos,
-                                     "slider"=>$slider]);
+                                     "slider"=>$slider,
+                                     "promociones"=>$promociones]);
     }
 
     /**
