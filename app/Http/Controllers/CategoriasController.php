@@ -53,7 +53,8 @@ class CategoriasController extends Controller
         
         $credentials=$this->validate(request(),[
             'categoria' => 'required|string|max:99', 
-            'file'=>'required|mimes:jpg,jpeg,png|max:1000'
+            'file'=>'required|mimes:jpg,jpeg,png|max:1000',
+            'bprioridad' => 'required'
         ]);
         if($request->file('file')){
             $path= Storage::disk('public')->put('imageupload/categorias', $request->file('file'));
@@ -61,6 +62,7 @@ class CategoriasController extends Controller
             
             $opcion=1;
             $categoria=$request->get('categoria');
+            $prioridad=$request->get('bprioridad');
             $usuario=Auth::user()->id;
             $id=1;
             $sql_sol = "call sp_CRUD_Categorias
@@ -69,7 +71,8 @@ class CategoriasController extends Controller
                 '".$categoria."',
                 '".$usuario."',
                 '".$id."',
-                '".$imagen."'
+                '".$imagen."',
+                '".$prioridad."'
                 
             )";
             $datos = DB::select($sql_sol,array(1,10));
@@ -124,7 +127,8 @@ class CategoriasController extends Controller
     {
         //
         $credentials=$this->validate(request(),[
-            'categoria' => 'required|string|max:99'  
+            'categoria' => 'required|string|max:99',  
+            'bprioridad' => 'required'
         ]);
         
         if($request->file('file')){
@@ -136,6 +140,7 @@ class CategoriasController extends Controller
             $imagen=asset($path);
             $opcion=2;
             $categoria=$request->get('categoria');
+            $prioridad=$request->get('bprioridad');
             $usuario=Auth::user()->id;
 
             /*OBTENER IMAGEN ANTERIOR*/ 
@@ -155,7 +160,8 @@ class CategoriasController extends Controller
                 '".$categoria."',
                 '".$usuario."',
                 '".$id."',
-                '".$imagen."'
+                '".$imagen."',
+                '".$prioridad."'
                 
             )";
             $datos = DB::select($sql_sol,array(1,10));
@@ -171,13 +177,15 @@ class CategoriasController extends Controller
             $opcion=3;
             $categoria=$request->get('categoria');
             $usuario=Auth::user()->id;
+            $prioridad=$request->get('bprioridad');
             $sql_sol = "call sp_CRUD_Categorias
             (
                 '".$opcion."',
                 '".$categoria."',
                 '".$usuario."',
                 '".$id."',
-                '".$imagen."'
+                '".$imagen."',
+                '".$prioridad."'
                 
             )";
             $datos = DB::select($sql_sol,array(1,10));
@@ -203,13 +211,15 @@ class CategoriasController extends Controller
         $categoria="no importa";
         $usuario=Auth::user()->id;
         $imagen="no importa";
+        $prioridad=3;
         $sql_sol = "call sp_CRUD_Categorias
         (
             '".$opcion."',
             '".$categoria."',
             '".$usuario."',
             '".$id."',
-            '".$imagen."'
+            '".$imagen."',
+            '".$prioridad."'
             
         )";
         $datos = DB::select($sql_sol,array(1,10));

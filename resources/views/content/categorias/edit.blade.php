@@ -30,6 +30,18 @@
                                                 </div>                                                            
                                         </div>
                                     </div>
+
+                                    <div class="form-group {{$errors->has('bprioridad') ? 'has-error':''}}">
+                                        <label class="col-md-3 col-xs-12 control-label">Prioridad</label>
+                                        <div class="col-md-6 col-xs-12">
+                                            <div class="distance-title"> Barra de prioridad de la categoria: <span></span></div>
+                                            <div class="distance-radius-wrap fl-wrap">
+                                                <input id="bprioridad" name="bprioridad" class="distance-radius rangeslider--horizontal" type="range" min="1" max="100"
+                                                    step="1" value="50" data-title="Radius around selected destination">
+                                                {!! $errors->first('bprioridad','<span class="help-block">:message</span>')!!}
+                                            </div>
+                                        </div>
+                                    </div>
                             
                                 </div>
                                 <div class="panel-footer">
