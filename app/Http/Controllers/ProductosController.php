@@ -32,7 +32,7 @@ class ProductosController extends Controller
         $marcas = DB::table('tbl_catmarcas')->where('activo','=',1)->get();
         $videos = DB::table('tbl_catvideos')->where('activo','=',1)->get();
         $video=$videos->first();
-        $categorias = DB::table('tbl_categoriaproducto')->where('activo','=',1)->get();
+        $categorias = DB::table('tbl_categoriaproducto')->where('activo','=',1)->orderBy('prioridad','desc')->get();
         return view('principal.navbar.productos',["informaciongeneral"=>$informaciongeneral,
                                             "marcas"=>$marcas,
                                           "videos"=>$videos,
