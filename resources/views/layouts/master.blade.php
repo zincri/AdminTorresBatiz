@@ -413,6 +413,7 @@
 
         @stack('mapa')
         @stack('clickableRow')
+        @stack('addElementsToForm')
         @stack('addProductsToPromo')
 
         <!-- END TEMPLATE -->

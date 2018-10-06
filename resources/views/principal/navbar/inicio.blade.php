@@ -163,58 +163,21 @@
             </div>
          </div>
          <div class="row promocionesSection">
+         @foreach($promociones as $item)
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 margin_bottom_30_all">
-               <div class="product_list">
-                  <div class="product_img"> <img class="img-responsive1" src="images/layout_img/Ricoh MP 305SPF Base Unit.JPG" alt=""> </div>
-                  <div class="product_detail_btm">
-                     <div class="center">
-                        <h4>Product 1</h4>
-                     </div>
-                     <div class="product_price">
-                        <p><span class="new_price">Promoción de Agosto</span></p>
-                     </div>
+               <a href="#">
+                  <div class="product_list">
+                        <div class="product_img"> <img class="img-responsive1" src="{{asset($item->Imagen)}}" alt=""> </div>
+                        <div class="product_detail_btm">
+                              <div class="center">
+                                    <h4>{{$item->Nombre}}</h4>
+                              </div>
+                        </div>
                   </div>
-               </div>
+               </a>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 margin_bottom_30_all">
-               <div class="product_list">
-                  <div class="product_img"> <img class="img-responsive1" src="images/layout_img/RICOH MP-501SPF.JPG" alt=""> </div>
-                  <div class="product_detail_btm">
-                     <div class="center">
-                        <h4>Product 2</h4>
-                     </div>
-                     <div class="product_price">
-                        <p><span class="new_price">Promoción Diciembre</span></p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 margin_bottom_30_all">
-               <div class="product_list">
-                  <div class="product_img"> <img class="img-responsive1" src="images/layout_img/RICOH MP-2555.JPG" alt=""> </div>
-                  <div class="product_detail_btm">
-                     <div class="center">
-                        <h4>Product 3</h4>
-                     </div>
-                     <div class="product_price">
-                        <p><span class="new_price">Promoción 13 Abril</span></p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 margin_bottom_30_all">
-               <div class="product_list">
-                  <div class="product_img"> <img class="img-responsive1" src="images/layout_img/RICOH SP-377.jpg" alt=""> </div>
-                  <div class="product_detail_btm">
-                     <div class="center">
-                        <h4>Product 4</h4>
-                     </div>
-                     <div class="product_price">
-                        <p><span class="new_price">Promoción Noviembre 15</span></p>
-                     </div>
-                  </div>
-               </div>
-            </div>
+         @endforeach
+            
          </div>
       </div>
       <!-- end section -->

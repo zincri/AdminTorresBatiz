@@ -48,7 +48,8 @@ class AdminPromocionesController extends Controller
     }
 
     public function store(Request $request){
-        if($request->ajax()) {
+        // dd($request->all());
+        if($request->all()) {
             // dd($request->all());
             // dd($productosAsociados[1]['nombreProducto']);
             // dd($request->get('productosAsociados'));
@@ -68,10 +69,15 @@ class AdminPromocionesController extends Controller
                 '1'
             )";
             $datos = DB::select($sql_sol,array(1,10));
-            if($datos==null){
-                return Redirect::to('administrador/promociones')->withErrors(['erroregistro'=> 'Error']);
-            }
-            return Redirect::to('administrador/promociones');
+            $idPromo = DB::table('tbl_promociones')
+            ->select('id')
+            ->where('Nombre','=',$nombrePromocion)
+            ->get();
+            dd($idPromo[0]->id);
+            // if($datos==null){
+            //     return Redirect::to('administrador/promociones')->withErrors(['erroregistro'=> 'Error']);
+            // }
+            // return Redirect::to('administrador/promociones');
         }
     }
 }
