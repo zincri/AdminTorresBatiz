@@ -70,6 +70,7 @@ Route::resource('/consumibles','ConsumiblesController');
 Route::resource('/sucursales','SucursalesController');
 Route::resource('/contacto','ContactoController');
 Route::resource('/productostodos','ProductosTodosController');
+Route::resource('/busqueda','busquedaController');
 
 Route::get('productostodosdetalle/{id}',[
     'as' => 'producto-detalle',

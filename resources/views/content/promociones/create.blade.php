@@ -1,4 +1,6 @@
-@extends('layouts.master') @section('content') {!!Form::open(array('url'=>'administrador/promociones','method'=>'POST', 'id'=>'promoForm','autocomplete'=>'off','files' => 'true'))!!} {{Form::token()}}
+@extends('layouts.master') @section('content') 
+{!!Form::open(array('url'=>'administrador/promociones','method'=>'POST', 'id'=>'promoForm','autocomplete'=>'off','files' => 'true'))!!} 
+{{Form::token()}}
 
 <div class="form-horizontal">
     <div class="panel panel-default">
@@ -73,7 +75,8 @@
     </div>
 </div>
 <!-- Aquí todo es nuevo, no lo marca por el commit de antes -->
-{!!Form::close()!!} @endsection @push('addProductsToPromo')
+{!!Form::close()!!} 
+@endsection @push('addProductsToPromo')
 <script type="text/javascript" src="{{ asset('js/addProductsToTable.js') }}"></script>
 
 @endpush
