@@ -38,7 +38,10 @@ class ProductosTodosController extends Controller
     }
 
     public function showProducts($categoria){
-        if($categoria == 1){
+        $idTemp = DB::table('tbl_categoriaproducto')->where('id',"=",$categoria)->where('activo','=',1)->get();
+
+        
+        if($idTemp[0]->nombre == "Todos los productos"){
             $productosByCategoria = DB::table('tbl_producto')->where('activo',"=",1)->paginate(16);
         }
         else{

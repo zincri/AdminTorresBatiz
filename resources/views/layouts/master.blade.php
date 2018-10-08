@@ -416,6 +416,7 @@
         @stack('clickableRow')
         @stack('addElementsToForm')
         @stack('addProductsToPromo')
+        @stack('porcentaje')
 
         <!-- END TEMPLATE -->
         <!-- END SCRIPTS -->         

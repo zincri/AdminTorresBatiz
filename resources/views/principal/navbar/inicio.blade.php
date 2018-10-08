@@ -165,7 +165,7 @@
          <div class="row promocionesSection">
          @foreach($promociones as $item)
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 margin_bottom_30_all">
-               <a href="#">
+               <a href="promociones/{{$item->id}}">
                   <div class="product_list">
                         <div class="product_img"> <img class="img-responsive1" src="{{asset($item->Imagen)}}" alt=""> </div>
                         <div class="product_detail_btm">
