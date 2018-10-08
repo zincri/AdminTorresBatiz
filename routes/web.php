@@ -73,6 +73,8 @@ Route::resource('/contacto','ContactoController');
 Route::resource('/productostodos','ProductosTodosController');
 Route::resource('/busqueda','busquedaController');
 
+Route::get('/buscar','busquedaController@store');
+
 Route::get('productostodosdetalle/{id}',[
     'as' => 'producto-detalle',
     'uses' => 'ProductosTodosDetalleController@Show'

@@ -28,21 +28,21 @@
     <div class="container">
         <div class="row">
         <div class="col-md-8">
-            <div class="busquedaContainer">
-                <a href=""><h3>Muebles de madera</h3></a>
-            </div>
-            <div class="busquedaContainer">
-                <a href=""><h3>Muebles de madera</h3></a>
-            </div>
-            <div class="busquedaContainer">
-                <a href=""><h3>Muebles de madera</h3></a>
-            </div>
-            <div class="busquedaContainer">
-                <a href=""><h3>Muebles de madera</h3></a>
-            </div>
-            <div class="busquedaContainer">
-                <a href=""><h3>Muebles de madera</h3></a>
-            </div>
+            <h3>PRODUCTOS RELACIONADOS</h3>
+            @foreach ($productos as $item)
+                <div class="busquedaContainer">
+                    <a href="{{ route('producto-detalle',[$item->id]) }}"><h3>{{$item->nombre}}</h3></a>
+                </div>
+            @endforeach
+            
+
+            <h3>CATEGORIAS RELACIONADOS</h3>
+            @foreach ($categorias as $item)
+                <div class="busquedaContainer">
+                    <a href="{{ route('send-categoria',['id' => $item->id])}}"><h3>{{$item->nombre}}</h3></a>
+                </div>
+            @endforeach
+            
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-left">
             <div class="side_bar">
