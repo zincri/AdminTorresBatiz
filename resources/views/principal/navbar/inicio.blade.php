@@ -243,8 +243,16 @@
                         <!-- Indicators -->
                         <ul class="carousel-indicators">
                            <li data-target="#testimonial_slider" data-slide-to="0" class="active"></li>
-                           <li data-target="#testimonial_slider" data-slide-to="1"></li>
-                           <li data-target="#testimonial_slider" data-slide-to="2"></li>
+                           <?php 
+                                    $co = (int)1 ?>
+                           @foreach($videos as $item)
+                           
+                           <li data-target="#testimonial_slider" data-slide-to="{{$co}}"></li>
+                           <?php
+                           $co=$co+1;
+                           ?>
+                           @endforeach
+                           
                         </ul>
                         <!-- The slideshow -->
                         <div class="carousel-inner">

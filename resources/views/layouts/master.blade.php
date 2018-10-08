@@ -68,6 +68,7 @@
                         <ul>
                             <li><a href="{{  url('administrador/informacion')  }}"><span class="fa fa-image"></span> Informacion General</a></li>
                             <li><a href="{{  url('administrador/listaservicios')  }}"><span class="fa fa-image"></span> Lista de servicios</a></li>
+                            <li><a href="{{  url('administrador/listavideos')  }}"><span class="fa fa-image"></span> Lista de videos</a></li>
                             <li><a href="{{  url('administrador/slider')  }}"><span class="fa fa-image"></span> Presentaciones de inicio</a></li>
                             <li><a href="{{  url('administrador/proyectos')  }}"><span class="fa fa-image"></span> Proyectos realizados</a></li>
                             <li><a href="{{  url('administrador/infoASC')  }}"><span class="fa fa-image"></span> Arrendamiento, Soporte y Consumibles</a></li>
