@@ -10,7 +10,7 @@
  <!-- START DEFAULT DATATABLE -->
  <a href="{{URL::action('AdminPromocionesController@create')}}"><button class="btn btn-primary">Nueva promoción<span  class="fa fa-plus-circle fa-4x fa-fw"></span></button></a>
  <div class="panel-body table-responsive">
-                                    <table class="table datatable">
+                                    <table class="table datatable custom-table">
                                         <thead>
                                             <tr>
                                                 <th>Imagen de la promoción</th>
@@ -23,7 +23,7 @@
                                        
                                         @foreach($promociones as $item)
                                         <tr>
-                                                <td> <img src="{{$item->Imagen}}" alt=""> </td>
+                                                <td class="imgContainer"> <img src="{{$item->Imagen}}" alt=""> </td>
                                                 <td>{{$item->Nombre}}</td>
                                                 <td>
                                                 <!-- <a href="{{ URL::action('AdminPromocionesController@show', $item->id) }}"><button class="btnCustomSee">Ver productos asociados</button></a></td> -->
@@ -35,10 +35,7 @@
                                                 </td>
                                                 @include('content.promociones.delete')
                                         </tr>
-                                        @endforeach
-                                           
-                                         
-                                           
+                                        @endforeach   
                                         </tbody>
                                     </table>
                                

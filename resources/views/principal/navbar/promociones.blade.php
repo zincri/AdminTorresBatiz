@@ -39,85 +39,30 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="product_detail_feature_img hizoom hi2">
                             <div class="hizoom hi2">
-                                <img class="imagenProductoDescripcion imagenGrandeDescripcion" src="{{asset($producto->imagen)}}" alt="#" />
+                                <img class="imagenProductoDescripcion imagenGrandeDescripcion" src="{{asset($promocion[0]->Imagen)}}" alt="#" />
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 product_detail_side detail_style1">
                         <div class="product-heading">
-                            <h2>{{$producto->nombre}}</h2>
+                            <h2>{{$promocion[0]->Nombre}}</h2>
                         </div>
-                        <div class="detail-contant">
-                            <p>{{$producto->descripcioncorta}}<br>
-                                
-                            </p>
-                            
-                            <form class="cart" method="post" action="" >
-                                <div class="quantity">
-                                    <input id="quantity" step="1" min="1" max="20" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" type="number">
-                                </div>
-                                <a href="{{ route('cart-add',['id'=>$producto->id, 'cantidad'=>1])}}"
-                                   id="hrefa" name="hrefa" >
-                                <button type="button" class="btn sqaure_bt addToCart">Añadir al carrito</button>
-                                </a>
-                            </form>
-                        </div>
-                        <a href="{{ route('cart-show') }}"><button type="button" class="btn sqaure_bt">Ver carrito</button></a>
+                        
                         
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="full">
-                            <div class="tab_bar_section">
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#description">Descripción</a> </li>
-                                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#galeriaProducto">Galería de imágenes</a> </li>
-
-                                </ul>
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                    <div id="description" class="tab-pane active">
-                                        <div class="product_desc">
-                                            <p>{{$producto->descripcionlarga}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div id="galeriaProducto" class="tab-pane fade">
-                                        <div class="product_review">
-                                            <div class="commant-text row">
-                                            <div class="col-md-3">
-                                                    <figure>
-                                                        <img class="imagenProductoDescripcion" src="{{ asset($producto->imagen) }}" alt="#" />
-                                                    </figure>
-                                                </div>
-
-                                                @foreach($galeria as $item)
-                                                <div class="col-md-3">
-                                                    <figure>
-                                                        <img class="imagenProductoDescripcion" src="{{ asset($item->imagen) }}" alt="#" />
-                                                    </figure>
-                                                </div>
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="row">
                     <div class="col-md-12">
                         <div class="full">
                             <div class="main_heading text_align_left" style="margin-bottom: 25px;">
-                                <h3>Otros productos</h3>
+                                <h3>Productos Asociados</h3>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    @foreach($productos as $item)
+                    @foreach($datos as $item)
                     <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 margin_bottom_30_all">
                     <a href="/productostodosdetalle/{{$item->id}}">
                         <div class="product_list">

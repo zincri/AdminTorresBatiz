@@ -69,7 +69,7 @@
             <button class="btn btn-primary pull-right" type="submit">Guardar</button>
         </div>
 
-        <button class="demo" type="button">Ver array</button>
+        
 
 
     </div>
