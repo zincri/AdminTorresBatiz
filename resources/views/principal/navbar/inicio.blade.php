@@ -96,14 +96,16 @@
          </div>
          <div class="row">
          <div class="col-md-12">
+         <a href="/productostodos/showProducts/{{$impresion->id}}">
                <div class="service_blog">
                   <div class="service_img">
                      <img class="img-responsive1" src="{{asset('images/torresimages/impresiondigital.jpg')}}" alt="#" />
                   </div>
                   <div class="service_head">
-                     <h5><a href="/productos">Contamos con los mejores multifuncionales</a></h5>
+                     <h5>Contamos con los mejores multifuncionales</h5>
                   </div>
                </div>
+            </a>
           </div>
 </div>
 <div class="row">
@@ -117,14 +119,16 @@
          
          @foreach($serviciosprincipal as $item)
             <div class="col-md-4">
+            <a href="{{$item->ruta}}">
                <div class="service_blog">
                   <div class="service_img">
                      <img class="img-responsive1" src="{{$item->imagen}}" alt="#" />
                   </div>
                   <div class="service_head">
-                     <h5><a href="{{$item->ruta}}">{{$item->titulo}}</a></h5>
+                     <h5>{{$item->titulo}}</h5>
                   </div>
                </div>
+            </a>
             </div>
          @endforeach
          </div>
@@ -284,8 +288,8 @@
                <div class="col-md-12">
                   <div class="full">
                      <ul class="brand_list">
-                        @foreach($marcas as $item)
-                        <li><img class="img-responsive2" src="{{$item->imagen}}" alt="#" /></li>
+                     @foreach($marcas as $item)
+                        <li style="background-image: url({{$item->imagen}})"></li>
                         @endforeach
                      </ul>
                   </div>

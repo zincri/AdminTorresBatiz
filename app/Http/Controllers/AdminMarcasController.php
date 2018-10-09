@@ -49,7 +49,7 @@ class AdminMarcasController extends Controller
             return Redirect::to('administrador/marcas');
         }
         else{
-            //regresar a la pagina de productos con error de que no se registro
+            //regresar a la pagina de marcas con error de que no se registro
             return Redirect::to('administrador/marcas')->withErrors(['erroregistro'=> 'Error']);
         }
     }
@@ -69,9 +69,9 @@ class AdminMarcasController extends Controller
         )";
         $datos = DB::select($sql_sol,array(1,10));
         if($datos==null){
-            return Redirect::to('administrador/productos')->withErrors(['erroregistro'=> 'Error']);
+            return Redirect::to('administrador/marcas')->withErrors(['erroregistro'=> 'Error']);
         }
-        return Redirect::to('administrador/productos');
+        return Redirect::to('administrador/marcas');
     }
 }
 // TODO ES NUEVO, SOLO YA NO LO MARCA PORQUE LO SUBÍ ANTES

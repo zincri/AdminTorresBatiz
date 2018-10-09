@@ -244,9 +244,9 @@
                 <div class="col-md-12">
                     <div class="full">
                         <ul class="brand_list">
-                            @foreach($marcas as $item)
-                            <li><img class="img-responsive2" src="{{$item->imagen}}" alt="#" /></li>
-                            @endforeach
+                        @foreach($marcas as $item)
+                        <li style="background-image: url({{$item->imagen}})"></li>
+                        @endforeach
                         </ul>
                     </div>
                 </div>

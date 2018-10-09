@@ -27,7 +27,10 @@ class InicioController extends Controller
         ->where('activo','=',1)
         ->limit(6)
         ->get();
-        
+        $impresionDigitalID = DB::table('tbl_categoriaproducto')
+        ->where('id','=',1)
+        ->where('activo','=',1)
+        ->first();
         session()->put('informacion', $informaciongeneral);
         session()->put('sucursales', $sucursales);
         session()->put('servicios', $servicios);
@@ -41,6 +44,7 @@ class InicioController extends Controller
                                      "proyectosrealizados"=>$proyectosrealizados,
                                      "videos"=>$videos,
                                      "slider"=>$slider,
+                                     "impresion"=>$impresionDigitalID,
                                      "promociones"=>$promociones]);
     }
 
