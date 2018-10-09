@@ -17,10 +17,10 @@
                 <div class="full">
                     <div class="title-holder">
                         <div class="title-holder-cell text-left">
-                            <h1 class="page-title">Detalles de compra</h1>
+                            <h1 class="page-title">Detalles de Promoción</h1>
                             <ol class="breadcrumb">
                                 <li><a href="/">Inicio</a></li>
-                                <li class="active">Detalles de compra</li>
+                                <li class="active">Detalles de Promoción</li>
                             </ol>
                         </div>
                     </div>
@@ -42,17 +42,13 @@
                                 <img class="imagenProductoDescripcion imagenGrandeDescripcion" src="{{asset($promocion[0]->Imagen)}}" alt="#" />
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 product_detail_side detail_style1">
                         <div class="product-heading">
-                            <h2>{{$promocion[0]->Nombre}}</h2>
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-                
-                <div class="row">
+                                <h2 style="text-align: center;margin-top: 4%;background-color: #0e7;padding: 1%;color: #fff;border-radius: 40px;">{{$promocion[0]->Nombre}}</h2>
+                                
+                            </div>
+                         </div>
+                    <div class="col-lg-6 col-md-12 product_detail_side detail_style1">
+                    <div class="row">
                     <div class="col-md-12">
                         <div class="full">
                             <div class="main_heading text_align_left" style="margin-bottom: 25px;">
@@ -63,13 +59,14 @@
                 </div>
                 <div class="row">
                     @foreach($datos as $item)
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 margin_bottom_30_all">
+                    <div class="col-md-6 margin_bottom_30_all">
                     <a href="/productostodosdetalle/{{$item->id}}">
                         <div class="product_list">
                             <div class="product_img"> <img class="img-responsive" src="{{asset($item->imagen)}}" alt=""> </div>
                             <div class="product_detail_btm">
                                 <div class="center">
-                                    <h4>{{$item->nombre}}</h4>
+                                    <h4>{{$item->nombre}}. Cantidad x{{$item->cantidad}}</h4>
+                                   
                                 </div>
                                 
                             </div>
@@ -78,6 +75,12 @@
                     </div>
                     @endforeach
                 </div>
+                        
+                        
+                    </div>
+                </div>
+                
+
             </div>
         </div>
     </div>
@@ -133,7 +136,7 @@
             <div class="col-md-12">
                 <div class="full">
                     <div class="contact_us_section">
-                        <div class="call_icon"> <img src="images/layout_img/phone_icon.png" alt="#" /> </div>
+                        <div class="call_icon"> <img src="{{asset('images/layout_img/phone_icon.png')}}" alt="#" /> </div>
                         <div class="inner_cont">
                             <h2>Si tiene alguna duda, contáctenos</h2>
                             <p>Puede comunicarse con nosotros al teléfono <strong>{{$informaciongeneral->telefono}}</strong>. O llene una solicitud dando click en Contáctenos</p>
@@ -154,7 +157,7 @@
                 <div class="full">
                     <ul class="brand_list">
                         @foreach($marcas as $item)
-                        <li><img class="img-responsive2" src="{{$item->imagen}}" alt="#" /></li>
+                        <li style="background-image: url({{$item->imagen}})"></li>
                         @endforeach
                     </ul>
                 </div>
@@ -192,6 +195,10 @@ if(mensaje == "success"){
 else if(mensaje == "error"){
     var mensajeInfo = `No se ha podido añadir este producto al carrito. Contacte con el administrador.`;
     var btnDisabled = true; 
+}
+else if(mensaje == 'warning'){
+    var mensajeInfo = `Ya se ha añadido esta promoción al carrito.`;
+    var btnDisabled = false; 
 }
 $(".notificacionAddCart").css("top", "1%");
     $(".notificacionAddCart > p").text(mensajeInfo);

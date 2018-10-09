@@ -100,7 +100,7 @@
             <div class="col-md-12">
                 <div class="full">
                     <div class="contact_us_section">
-                        <div class="call_icon"> <img src="images/layout_img/phone_icon.png" alt="#" /> </div>
+                        <div class="call_icon"> <img src="{{asset('images/layout_img/phone_icon.png')}}" alt="#" /> </div>
                         <div class="inner_cont">
                             <h2>Si tiene alguna duda, contáctenos</h2>
                             <p>Puede comunicarse con nosotros al teléfono <strong>{{$informaciongeneral->telefono}}</strong>. O llene una solicitud dando click en Contáctenos</p>
@@ -120,8 +120,8 @@
             <div class="col-md-12">
                 <div class="full">
                     <ul class="brand_list">
-                        @foreach($marcas as $item)
-                        <li><img class="img-responsive2" src="{{$item->imagen}}" alt="#" /></li>
+                    @foreach($marcas as $item)
+                        <li style="background-image: url({{$item->imagen}})"></li>
                         @endforeach
                     </ul>
                 </div>

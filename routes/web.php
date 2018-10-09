@@ -60,7 +60,18 @@ Route::get('product/{id}', function($id){
     $a=DB::table('tbl_productogeneral')->where('activo','=',1)->where('id','=',$id)->first();
     return redirect()->route('cart-add',$a);
 });
-
+Route::get('promo/{id}', function($id){
+    $datos = DB::table('tbl_producto')
+        ->select('tbl_producto.imagen',
+                 'tbl_producto.id',
+                 'tbl_producto.nombre',
+                 'tbl_promoproductos.cantidad')
+        ->where('tbl_promoproductos.activo','=',1)
+        ->where('tbl_promoproductos.id_promocion','=',$id)
+        ->join('tbl_promoproductos','tbl_producto.id','=','tbl_promoproductos.id_producto')
+        ->get();
+    return redirect()->route('cart-promo',$datos);
+});
 Route::resource('/','InicioController');
 Route::resource('/nosotros','NosotrosController');
 Route::resource('/productos','ProductosController');
@@ -80,7 +91,10 @@ Route::get('productostodosdetalle/{id}',[
     'as' => 'producto-detalle',
     'uses' => 'ProductosTodosDetalleController@Show'
 ]);
-
+Route::get('promociones/{id}',[
+    'as' => 'promo-detalle',
+    'uses' => 'clientePromocionesController@index'
+]);
 Route::get('promociones/{id}',[
     'as' => 'promo-detalle',
     'uses' => 'clientePromocionesController@index'
@@ -105,6 +119,11 @@ Route::get('cart/store',[
 Route::get('cart/add/{id}/{cantidad}',[
     'as' => 'cart-add',
     'uses' => 'CartController@add'
+]);
+
+Route::get('cart/add/{id}/',[
+    'as' => 'cart-promo',
+    'uses' => 'CartController@addPromo'
 ]);
 
 Route::get('cart/refresh/{id}/{cantidad}', [

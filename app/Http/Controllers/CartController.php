@@ -23,6 +23,7 @@ class CartController extends Controller
         session()->put('redes', $redes);
     
         if(!\Session::has('cart')) \Session::put('cart',array());
+        if(!\Session::has('cartPromo')) \Session::put('cartPromo',array());
 
     }
     /**
@@ -178,20 +179,51 @@ class CartController extends Controller
         
         
     }
+    public function addPromo($id)
+    {
+    
+        try{
+        $mensaje = "";
+        $flag=false;
+        (int)$cart=\Session::get('cartPromo');
+        (int)$entid=$id;
+        
+        foreach($cart as $item){
+            $entero=$item;
+            if($entero == $entid) {
+                $flag=true;
+                break;   
+            }
+        }
+        if($flag==true){
+            return redirect()->route('promo-detalle',['promo' => $id])->with('message',"warning");
+        }
+        else {
+            \Session::put('cartPromo',$id);
+        }
+        return redirect()->route('promo-detalle',['promo' => $id])->with('message',"success");
+        }
+        catch(Exception $e){
+            return redirect()->route('promo-detalle',['promo' => $id])->with('message',"error");
+        }
+        
+        
+    }
 
     public function delete($id)
     {
-        
         $cart=\Session::get('cart');
         unset($cart[$id]);
         \Session::put('cart',$cart);
         return redirect()->route('cart-show');
-        
+    }
+    public function deletePromo($datos){
+
     }
 
     public function vaciar()
     {
-        
+        \Session::forget('cartPromo');
         \Session::forget('cart');
         return redirect()->route('cart-show');
     }
@@ -201,8 +233,6 @@ class CartController extends Controller
     {
         
         $cart=\Session::get('cart');
-        //dd($id.":".$cantidad);
-        
         $cart[$id]->cantidad=$cantidad;
         \Session::put('cart',$cart);
         return redirect()->route('cart-show');
