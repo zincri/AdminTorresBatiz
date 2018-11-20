@@ -9261,6 +9261,10 @@ a {
     visibility: hidden;
 }
 
+textarea {
+    word-break: break-all !important;
+}
+
 
 /* End Mensajes */
 

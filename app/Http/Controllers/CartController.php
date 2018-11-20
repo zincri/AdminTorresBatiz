@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use DB;
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests\SolicitudCarritoRequest;
+use Mail;
 
 class CartController extends Controller
 {
@@ -70,6 +71,8 @@ class CartController extends Controller
         $mensaje=$request->get('mensaje');
         $modelo="sin modelo";
         $usuario=2;
+
+        $emailEnvia=$request->get('email');
         
         /*
         No necesarios*/
@@ -93,6 +96,8 @@ class CartController extends Controller
             '".$volumen."',
             '".$mensaje."',
             '".$modelo."',
+            'no importa',
+            'no importa',
             '".$usuario."'
             
         )";
@@ -102,8 +107,9 @@ class CartController extends Controller
         if($idsolicitud != null)
         {
             $cart = \Session::get('cart');
-        
-            foreach($cart as $item){
+            $datosCliente = [];
+            $cont = 1;
+            foreach($cart as $key => $item){
                 $objeto=(int)$item->id;
                 $itcantidad=(int)$item->cantidad;
                 $sql_sol = "call sp_setobjetos
@@ -115,7 +121,20 @@ class CartController extends Controller
                     
                 )";
                 $dato = DB::select($sql_sol,array(1,10));
+                $datosCliente[$cont] = $item;
+                $cont++;
             }
+            
+            $cant = count($datosCliente) + 1;
+            $datosCliente[$cant] = $request->all();
+            
+            Mail::send('principal.navbar.emailCart',['datos'=>$datosCliente], function($messaje){
+                $messaje->from('servicios.creativasoftline@gmail.com','Solicitud de Cotización');
+                $messaje->to('sistemas@torresbatiz.com')->subject('SOLICITUD DE COTIZACIÓN');
+                $messaje->to('industriascoc01@gmail.com')->subject('SOLICITUD DE COTIZACIÓN');
+                
+            });
+            $cont=0;
             \Session::forget('cart');
             return Redirect::to('cart/show')->with("success","Hemos recibido su solicitud. Nos comunicaremos con usted en su brevedad.");
         }
@@ -165,6 +184,7 @@ class CartController extends Controller
             
         }
         else {
+            
             $a->cantidad=$cantidad;
             $cart[$id]=$a;
             \Session::put('cart',$cart);

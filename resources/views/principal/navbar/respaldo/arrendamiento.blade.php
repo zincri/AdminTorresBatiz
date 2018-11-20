@@ -1,4 +1,5 @@
-@extends ('layouts.masterprincipal') @section ('content')
+@extends ('layouts.masterprincipal') 
+@section ('content')
 <!-- inner page banner -->
 <div id="inner_banner" style="background-image: url('{{$informaciongeneral->imagenbannersecundario}}')" class="section inner_banner_section">
     <div class="container">
@@ -124,18 +125,7 @@
                                                     <input id="volumen" max="7" type="text" name="volumen" placeholder="Ingrese volumen">
                                                     <span id="volumenOK" style="color:red" class="help-block"></span>
                                                 </div>
-                                            </div>
-                                            <div class="groupInputs">
-                                                <p class="titleInput">Tamaño máximo de hoja</p>
-                                                <div class="selectContainer">
-                                                    <select name="hojaSize" id="hojaSize">
-                                                        <option value="0">Seleccione...</option>
-                                                        <option value="1">Carta</option>
-                                                        <option value="2">Oficio</option>
-                                                        <option value="3">Doble Carta</option>
-                                                    </select>
-                                                    <span id="hojaOK" style="color:red" class="help-block"></span>
-                                                    </div>
+
                                             </div>
                                         </div>
                                         <div class="groupInputs">
@@ -157,7 +147,7 @@
                                     <div class="side_bar">
                                         <div class="side_bar_blog">
                                             <h4>Noticias recientes</h4>
-                                            <p>{{$noticia->descripcion}}
+                                            <p>{{$noticia}}
                                             </p>
                                             <p class="enlaceBlog"><a href="/noticias">Ver más</a></p>
                                         </div>

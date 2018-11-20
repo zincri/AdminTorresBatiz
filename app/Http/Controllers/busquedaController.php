@@ -14,32 +14,33 @@ class BusquedaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
 
-        if(!\Session::has('busqueda')){
-            return Redirect::back();
-        }
-        $busqueda=\Session::get('busqueda');
-        
+      
+        $busqueda = $request->get('busqueda');
             $informaciongeneral = DB::table('tbl_informaciongeneral')->first();
             $marcas = DB::table('tbl_catmarcas')->where('activo','=',1)->get();
             $videos = DB::table('tbl_catvideos')->where('activo','=',1)->get();
             $video=$videos->first();
             $noticia = DB::table('tbl_noticias')->where('activo','=',1)->orderBy('fecha_ins','desc')->first();
-            $categorias= DB::table('tbl_categoriaproducto')->where('activo','=',1)
-                        ->where('nombre','like','%'.$busqueda.'%')->get();
-            
-            $productos= DB::table('tbl_producto')->where('activo','=',1)
-                        ->where('descripcioncorta','like','%'.$busqueda.'%')
-                        ->orWhere('descripcionlarga', 'like','%'.$busqueda.'%')->get();
+          
+            $productos = DB::table('tbl_producto')
+            ->select('tbl_producto.id as idProducto',
+                     'tbl_producto.nombre as nombreProducto',
+                     'tbl_producto.marca as marcaProducto',
+                     'tbl_producto.descripcioncorta as descProducto',
+                     'tbl_categoriaproducto.nombre as categoria')
+            ->where(\DB::raw("CONCAT(tbl_producto.nombre, ' ' , tbl_producto.marca, ' ' , tbl_producto.descripcioncorta, ' ' , tbl_categoriaproducto.nombre)"), "LIKE", "%$busqueda%")
+            ->where('tbl_producto.activo','=',1)
+            ->join('tbl_categoriaproducto', 'tbl_producto.idcategoriaproducto', '=', 'tbl_categoriaproducto.id')
+            ->get();
             
             return view('principal.navbar.busqueda',["informaciongeneral"=>$informaciongeneral,
                                                 "marcas"=>$marcas,
                                               "videos"=>$videos,
                                               "video"=>$video,
                                               "noticia"=>$noticia,
-                                              "categorias"=>$categorias,
                                               "productos"=>$productos
                                               ]);
     }
@@ -62,13 +63,7 @@ class BusquedaController extends Controller
      */
     public function store(Request $request)
     {
-        $credentials=$this->validate(request(),[
-            'busqueda' => 'required|string|max:100'
-        ]);
-
-        \Session::put('busqueda',$request->get('busqueda'));
-        return Redirect::to('/busqueda');
-
+       
     }
 
     /**
