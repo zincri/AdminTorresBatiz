@@ -89,6 +89,17 @@ class ArrendamientoController extends Controller
         $mensaje=$request->get('mensaje');
         $modelo="ninguno";
         $usuario=2;
+        $hojaSize = $request->get('hojaSize');
+        
+        if($hojaSize == 1){
+            $hojaSize = "Carta";
+        }
+        else if($hojaSize == 2){
+            $hojaSize = "Oficio";
+        }
+        else if($hojaSize == 3){
+            $hojaSize = "Doble carta";
+        }
         
         
         
@@ -104,6 +115,8 @@ class ArrendamientoController extends Controller
             '".$volumen."',
             '".$mensaje."',
             '".$modelo."',
+            '".$hojaSize."',
+            'no importa',
             '".$usuario."'
             
         )";

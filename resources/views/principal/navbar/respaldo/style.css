@@ -1194,9 +1194,7 @@ header .right_bt .btn {
     font-weight: 500;
     text-transform: uppercase;
     transition: ease all 0.2s;
-    transform-origin: center;
 }
-
 #navbar_menu>ul>li>a:hover {
     transform: scale(1.4);
 }
@@ -2092,14 +2090,11 @@ div.large_cont_p p {
     position: relative;
     overflow: hidden;
     width: 100%;
-    transform-origin: center;
     transition: ease all 0.2s;
 }
-
 .service_img:hover {
     transform: scale(1.1);
 }
-
 .service_img.cat {
     height: 200px;
 }
@@ -3753,9 +3748,9 @@ footer ul.social_icons {
     padding: 30px 0;
     margin: 0 .5%;
     height: 220px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
     transition: ease all 0.2s;
 }
 
@@ -5244,7 +5239,6 @@ galeriaProducto figure {
     background-repeat: no-repeat;
 }
 
-
 /* Notificación Formulario */
 
 .containerFixed {
@@ -5286,14 +5280,6 @@ galeriaProducto figure {
 
 
 /* End notificación formulario */
-
-.groupInputs select {
-    width: 200px;
-    border-radius: 10px;
-    padding: 2%;
-    border: 1px solid #ccc;
-    margin-bottom: 2%;
-}
 
 
 /*End classes*/

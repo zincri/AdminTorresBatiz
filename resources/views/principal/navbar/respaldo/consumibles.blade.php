@@ -74,13 +74,6 @@
                                             <span id="modeloOK" style="color:red" class="help-block"></span>
                                         </div>
                                     </div>
-                                    <div class="groupForm">
-                                        <label for="modelo">Número de serie:</label>
-                                        <div class="input-group serieGroup">
-                                            <input id="serie" type="text" name="serie" placeholder="Ingrese serie de equipo">
-                                            <span id="serieOK" style="color:red" class="help-block"></span>
-                                        </div>
-                                    </div>
                                     <div class="groupInputs">
                                         <p class="descArrendamiento">Porfavor, mándenos un mensaje especificando su necesidad y nosotros nos comunicaremos posteriormente con usted.</p>
                                         <div class="input-group mensajeGroup">
@@ -101,7 +94,7 @@
             <div class="side_bar">
                 <div class="side_bar_blog">
                     <h4>Noticias recientes</h4>
-                    <p>{{$noticia->descripcion}}
+                    <p>{{$noticia}}
                     </p>
                     <p class="enlaceBlog"><a href="/noticias">Ver más</a></p>
                 </div>

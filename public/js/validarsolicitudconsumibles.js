@@ -3,6 +3,46 @@ var bn, bt, be, bm, bmod;
 function validar() {
 
 
+    // Validar número de serie
+    document.getElementById('serie').addEventListener('input', function() {
+        campo = event.target;
+        valido = document.getElementById('serieOK');
+
+        nombreRegex = /[-a-zA-Z0-9]/i;
+
+        if (nombreRegex.test(campo.value) && campo.value.length < 99) {
+            $(".serieGroup").addClass("inputValido");
+            $(".serieGroup").removeClass("inputInvalido");
+            bmod = true;
+        } else {
+            $(".serieGroup").removeClass("inputValido");
+            $(".serieGroup").addClass("inputInvalido");
+            bmod = false;
+        }
+    });
+    $("input[name='serie']").bind('keypress', function(event) {
+        var eventCode = !event.charCode ? event.which : event.charCode;
+        if ((eventCode >= 37 && eventCode <= 40) || eventCode == 8 || eventCode == 9 || eventCode == 46) { // Left  / Right Arrow, Backspace, Delete keys
+            return;
+        }
+        var regex = new RegExp("[-a-zA-Z0-9]");
+        var key = String.fromCharCode(eventCode);
+        if (!regex.test(key)) {
+            event.preventDefault();
+            $(".serieGroup").addClass("inputInvalido");
+            setTimeout(function() {
+                $(".serieGroup").removeClass("inputInvalido");
+                bn = false;
+            }, 1000);
+
+            return false;
+        } else {
+            $(".serieGroup").addClass("inputValido");
+            $(".serieGroup").removeClass("inputInvalido");
+            bn = true;
+
+        }
+    });
 
     /**Validacion nombre */
     document.getElementById('nombre').addEventListener('input', function() {

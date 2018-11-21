@@ -57,7 +57,28 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                    <div class="col-md-6">
+                                            <div>
+                                                <div>
+                                                    <h3 class="panel-title" ><strong>Modelo de equipo:</strong>  </h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <p>{{$datos->modelo}}</p>
+                                                </div>                                    
+                                             </div>
+                                        </div>
                                         
+                                        
+                                        <div class="col-md-6">
+                                            <div>
+                                                <div>
+                                                    <h3 class="panel-title" ><strong>Número de serie:</strong>  </h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <p>{{$datos->serie}}</p>
+                                                </div>                                    
+                                             </div>
+                                        </div>
                                         <div class="col-md-6">
                                             <div>
                                                 <div>

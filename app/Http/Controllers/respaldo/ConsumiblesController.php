@@ -38,12 +38,24 @@ class ConsumiblesController extends Controller
         ->where('pagina','=','consumibles')
         ->where('activo','=',1)
         ->first();
-        return view('principal.navbar.consumibles',["informaciongeneral"=>$informaciongeneral,
+        
+        if($noticia == null){
+            return view('principal.navbar.consumibles',["informaciongeneral"=>$informaciongeneral,
                                             "marcas"=>$marcas,
                                           "videos"=>$videos,
                                           "video"=>$video,
-                                          "noticia"=>$noticia,
+                                          "noticia"=>"No hay noticias recientes",
                                           "info"=>$info]);
+        }
+        else{
+            return view('principal.navbar.consumibles',["informaciongeneral"=>$informaciongeneral,
+                                            "marcas"=>$marcas,
+                                          "videos"=>$videos,
+                                          "video"=>$video,
+                                          "noticia"=>$noticia->descripcion,
+                                          "info"=>$info]);
+        }
+        
     }
 
     /**
@@ -75,7 +87,6 @@ class ConsumiblesController extends Controller
         $mensaje=$request->get('mensaje');
         $modelo=$request->get('modelo');
         $usuario=2;
-        $serie = $request->get('serie');
         
         /*
         No necesarios*/
@@ -98,8 +109,6 @@ class ConsumiblesController extends Controller
             '".$volumen."',
             '".$mensaje."',
             '".$modelo."',
-            'No importa',
-            '".$serie."',
             '".$usuario."'
             
         )";

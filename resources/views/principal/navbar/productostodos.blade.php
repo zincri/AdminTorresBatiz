@@ -7,10 +7,10 @@
                 <div class="full">
                     <div class="title-holder">
                         <div class="title-holder-cell text-left">
-                            <h1 class="page-title">Productos</h1>
+                            <h1 class="page-title">{{$categoriaActual}}</h1>
                             <ol class="breadcrumb">
                                 <li><a href="/">Inicio</a></li>
-                                <li class="active">Productos</li>
+                                <li class="active">{{$categoriaActual}}</li>
                             </ol>
                         </div>
                     </div>

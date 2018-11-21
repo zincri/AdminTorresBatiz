@@ -2,14 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
 use DB;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
-use App\Http\Controllers\Post;
 class ProductosTodosController extends Controller
 {
     public function __construct()
@@ -34,7 +28,7 @@ class ProductosTodosController extends Controller
      */
     public function index()
     {
-        $informaciongeneral = DB::table('tbl_informaciongeneral')->first();
+        $informaciongeneral = DB::table('tbl_informaciongeneral')->where('activo','=',1)->first();
         $marcas = DB::table('tbl_catmarcas')->where('activo','=',1)->get();
         $videos = DB::table('tbl_catvideos')->where('activo','=',1)->get();
         
@@ -50,12 +44,6 @@ class ProductosTodosController extends Controller
         if($idTemp[0]->nombre == "Todos los productos"){
             $productosByCategoria = DB::table('tbl_producto')->where('activo',"=",1)->paginate(16);
         }
-        else if($idTemp[0]->nombre == "Arrendamiento" || $idTemp[0]->id == 4){
-            return Redirect::to('/arrendamiento');
-        }
-        else if($idTemp[0]->nombre == "Consumibles y refacciones" || $idTemp[0]->id == 16){
-            return Redirect::to('/consumibles');
-        }
         else{
             $productosByCategoria = DB::table('tbl_producto')->where('idcategoriaproducto',"=",$categoria)->where('activo','=',1)->paginate(16);
         }
@@ -63,7 +51,7 @@ class ProductosTodosController extends Controller
         ->select('nombre')
         ->where('id','=',$categoria)
         ->first();
-        $informaciongeneral = DB::table('tbl_informaciongeneral')->first();
+        $informaciongeneral = DB::table('tbl_informaciongeneral')->where('activo','=',1)->first();
         $marcas = DB::table('tbl_catmarcas')->where('activo','=',1)->get();
         $videos = DB::table('tbl_catvideos')->where('activo','=',1)->get();
         return view('principal.navbar.productostodos',["informaciongeneral"=>$informaciongeneral,
@@ -106,7 +94,7 @@ class ProductosTodosController extends Controller
      */
     public function show($categoria)
     {
-        $informaciongeneral = DB::table('tbl_informaciongeneral')->first();
+        $informaciongeneral = DB::table('tbl_informaciongeneral')->where('activo','=',1)->first();
         $marcas = DB::table('tbl_catmarcas')->where('activo','=',1)->get();
         $videos = DB::table('tbl_catvideos')->where('activo','=',1)->get();
         

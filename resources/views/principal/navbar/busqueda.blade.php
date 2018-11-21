@@ -28,18 +28,19 @@
     <div class="container">
         <div class="row">
         <div class="col-md-8">
-            <h3>PRODUCTOS RELACIONADOS</h3>
+            <h3>Resultados de búsqueda</h3>
+            <div class="busquedaContainer">
+                    <a href="">
+                    <p>Escritorio metálico 4 Gavetas | Marca: Gebesa | Categoría: Mobiliario metálico</p>
+                    <p>RELOJ CHECADOR 1600E * GRAN PANTALLA LCD QUE MUESTRA LA FECHA, HORARIO Y DE LA SEMANA,* NO REQUIERE REINICIO EN PERDIDAS DE ENERGIA.</p>
+                    </a>
+            </div>
             @foreach ($productos as $item)
                 <div class="busquedaContainer">
-                    <a href="{{ route('producto-detalle',[$item->id]) }}"><h3>{{$item->nombre}}</h3></a>
-                </div>
-            @endforeach
-            
-
-            <h3>CATEGORIAS RELACIONADOS</h3>
-            @foreach ($categorias as $item)
-                <div class="busquedaContainer">
-                    <a href="{{ route('send-categoria',['id' => $item->id])}}"><h3>{{$item->nombre}}</h3></a>
+                    <a href="{{ route('producto-detalle',[$item->idProducto]) }}">
+                        <p>{{$item->nombreProducto}} | Marca: {{$item->marcaProducto}} | Categoría: {{$item->categoria}}</p>
+                        <p>{{ $item->descProducto }}</p>
+                    </a>
                 </div>
             @endforeach
             

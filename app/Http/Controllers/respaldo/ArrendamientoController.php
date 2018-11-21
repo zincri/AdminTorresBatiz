@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use App\Http\Requests\SolicitudConsumiblesRequest;
+use App\Http\Requests\SolicitudArrendamientoRequest;
 use DB;
 
-class ConsumiblesController extends Controller
+class ArrendamientoController extends Controller
 {
     public function __construct()
     {
@@ -28,22 +28,35 @@ class ConsumiblesController extends Controller
      */
     public function index()
     {
-        
         $informaciongeneral = DB::table('tbl_informaciongeneral')->first();
         $marcas = DB::table('tbl_catmarcas')->where('activo','=',1)->get();
         $videos = DB::table('tbl_catvideos')->where('activo','=',1)->get();
         $video=$videos->first();
         $noticia = DB::table('tbl_noticias')->where('activo','=',1)->orderBy('fecha_ins','desc')->first();
         $info = DB::table('tbl_infoasc')
-        ->where('pagina','=','consumibles')
+        ->where('pagina','=','arrendamiento')
         ->where('activo','=',1)
         ->first();
-        return view('principal.navbar.consumibles',["informaciongeneral"=>$informaciongeneral,
+        
+        if($noticia == null){
+            return view('principal.navbar.arrendamiento',["informaciongeneral"=>$informaciongeneral,
                                             "marcas"=>$marcas,
-                                          "videos"=>$videos,
-                                          "video"=>$video,
-                                          "noticia"=>$noticia,
-                                          "info"=>$info]);
+                                            "videos"=>$videos,
+                                            "video"=>$video,
+                                            "noticia"=>"No hay noticias recientes",
+                                            "info"=>$info]);
+            
+        }
+        else{
+            return view('principal.navbar.arrendamiento',["informaciongeneral"=>$informaciongeneral,
+                                            "marcas"=>$marcas,
+                                            "videos"=>$videos,
+                                            "video"=>$video,
+                                            "noticia"=>$noticia->descripcion,
+                                            "info"=>$info]);
+        }
+        
+        
     }
 
     /**
@@ -62,28 +75,34 @@ class ConsumiblesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(SolicitudConsumiblesRequest $request)
+    public function store(SolicitudArrendamientoRequest $request)
     {
-        $opcion=2;
+        //
+        $opcion=1;
         $nombre=$request->get('nombre');
-        $nombreempresa=$request->get('empresa');
+        $nombreempresa=$request->get('nombreempresa');
         if(empty($nombreempresa)){
             $nombreempresa='Sin empresa';
         }
         $telefono=$request->get('telefono');
         $email=$request->get('email');
+        $blanconegro=$request->get('fotocopiadora');
+        if($blanconegro === "on"){
+            $blanconegro=1;
+        }else{
+            $blanconegro=0;
+        }
+        $color=$request->get('Impresora');
+        if($color === "on"){
+            $color=1;
+        }else{
+            $color=0;
+        }
+        $volumen=$request->get('volumen');
         $mensaje=$request->get('mensaje');
-        $modelo=$request->get('modelo');
+        $modelo="ninguno";
         $usuario=2;
-        $serie = $request->get('serie');
         
-        /*
-        No necesarios*/
-
-        $blanconegro=1;
-        $color=1;
-        $volumen=1;
-        /**/
         
         
         $sql_solicitud = "call sp_setSolicitud
@@ -98,8 +117,6 @@ class ConsumiblesController extends Controller
             '".$volumen."',
             '".$mensaje."',
             '".$modelo."',
-            'No importa',
-            '".$serie."',
             '".$usuario."'
             
         )";
@@ -107,11 +124,13 @@ class ConsumiblesController extends Controller
 
         if($datos_solicitud != null)
         {
-            return Redirect::to('/consumibles')->with("success","Hemos recibido su solicitud. Nos comunicaremos con usted en su brevedad.");
+            
+            // return Redirect::to('/arrendamiento');
+            return Redirect::to('/arrendamiento')->with("success","Hemos recibido su solicitud. Nos comunicaremos con usted en su brevedad.");
         }
         else
         {
-            return Redirect::to('/consumibles')->with("error","Ha ocurrido un error al enviar su formulario. Inténtelo más tarde.");
+            return Redirect::to('/arrendamiento')->with("error","Ha ocurrido un error al enviar su formulario. Inténtelo más tarde.");
         }
     }
 

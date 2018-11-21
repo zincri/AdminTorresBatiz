@@ -98,8 +98,7 @@
          <div class="col-md-12">
          <a href="/productostodos/showProducts/{{$impresion->id}}">
                <div class="service_blog">
-                  <div class="service_img">
-                     <img class="img-responsive1" src="{{asset('images/torresimages/impresiondigital.jpg')}}" alt="#" />
+                  <div class="service_img" style="height: 300px; background-image: url({{asset('images/torresimages/impresiondigital.jpg')}})">
                   </div>
                   <div class="service_head">
                      <h5>Contamos con los mejores multifuncionales</h5>
@@ -121,8 +120,7 @@
             <div class="col-md-4">
             <a href="{{$item->ruta}}">
                <div class="service_blog">
-                  <div class="service_img">
-                     <img class="img-responsive1" src="{{$item->imagen}}" alt="#" />
+                  <div class="service_img" style="height: 300px; background-image: url({{$item->imagen}})">
                   </div>
                   <div class="service_head">
                      <h5>{{$item->titulo}}</h5>
@@ -171,7 +169,7 @@
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 margin_bottom_30_all">
                <a href="promociones/{{$item->id}}">
                   <div class="product_list">
-                        <div class="product_img"> <img class="img-responsive1" src="{{asset($item->Imagen)}}" alt=""> </div>
+                        <div class="product_img" style="background-image: url({{asset($item->Imagen)}})"></div>
                         <div class="product_detail_btm">
                               <div class="center">
                                     <h4>{{$item->Nombre}}</h4>
@@ -243,7 +241,7 @@
             <div class="row">
                <div class="col-sm-12">
                   <div class="full">
-                     <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
+                     <div id="testimonial_slider" class="carousel slide" data-interval="false" data-ride="carousel">
                         <!-- Indicators -->
                         <ul class="carousel-indicators">
                            <li data-target="#testimonial_slider" data-slide-to="0" class="active"></li>
@@ -314,4 +312,7 @@
 @endsection
 @push('script') 
       <script type="text/javascript" src="{{asset('js/mapa_inicio.js')}}"></script>  
+      <script type="text/javascript">
+         $(".carousel").pause();
+      </script>
 @endpush

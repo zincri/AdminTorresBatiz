@@ -123,6 +123,21 @@ function validar() {
         }
     });
 
+    // Validar tamaño de hoja
+    $(document).on('change', '#hojaSize', function(e) {
+        // console.log(this.options[e.target.selectedIndex].value);
+        var idPaquete = this.options[e.target.selectedIndex].value;
+
+        if (idPaquete != 0) {
+            $(".selectContainer").addClass("inputValido");
+            $(".selectContainer").removeClass("inputInvalido");
+        } else {
+            $(".selectContainer").removeClass("inputValido");
+            $(".selectContainer").addClass("inputInvalido");
+        }
+
+    });
+
 
     /* validar VOLUMEN*/
     document.getElementById('volumen').addEventListener('input', function() {

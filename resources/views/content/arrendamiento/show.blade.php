@@ -106,6 +106,16 @@
                                              </div>
                                              
                                         </div>
+                                        <div class="col-md-6">
+                                            <div>
+                                                <div>
+                                                    <h3 class="panel-title"><strong>Tamaño máximo de hoja:</strong>  </h3>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <p>{{$datos->hojasize}}</p>
+                                                </div>                                    
+                                             </div>
+                                        </div>
                                     </div>
 
 

@@ -76,9 +76,7 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-    <!-- loader -->
-    <div class="bg_load"> <img class="loader_animation" src="{{asset('images/logoTorres.png')}}" alt="#" /> </div>
-    <!-- end loader -->
+    
 
 
 
@@ -204,7 +202,7 @@
                   <div class="row">
                      <div class="col-lg-8 col-md-8 col-sm-8 offset-lg-2 offset-md-2 offset-sm-2 col-xs-10 col-xs-offset-1">
                         <div class="navbar-search">
-                        {!!Form::open(array('url'=>'/buscar','method'=>'GET', 'id'=>'busquedaForm','autocomplete'=>'off','busqueda' => 'true'))!!} 
+                        {!!Form::open(array('url'=>'/busqueda','method'=>'GET', 'id'=>'busquedaForm','autocomplete'=>'off','class'=>'search-global'))!!} 
                         {{Form::token()}}
                               <input type="text" placeholder="Ingrese su búsqueda" autocomplete="off" name="busqueda" id="search" value="" class="search-global__input">
                               <button type="submit" class="search-global__btn"><i class="fa fa-search"></i></button>
@@ -350,7 +348,7 @@
     -->
     <!-- end google map js -->
     <script>
-        $(window).load(() => {
+        $(window).on("load",() => {
             @if(session()-> has('success') || session()-> has('error'))
             $(".containerFixed").css('display', 'block');
             setTimeout(() => {
