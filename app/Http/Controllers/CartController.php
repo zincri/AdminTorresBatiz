@@ -60,6 +60,7 @@ class CartController extends Controller
      */
     public function store(SolicitudCarritoRequest $request)
     {
+        
         $opcion=4;
         $nombre=$request->get('nombre');
         $nombreempresa=$request->get('empresa');
@@ -127,13 +128,14 @@ class CartController extends Controller
             
             $cant = count($datosCliente) + 1;
             $datosCliente[$cant] = $request->all();
-            
+            /*
             Mail::send('principal.navbar.emailCart',['datos'=>$datosCliente], function($messaje){
                 $messaje->from('servicios.creativasoftline@gmail.com','Solicitud de Cotización');
                 $messaje->to('sistemas@torresbatiz.com')->subject('SOLICITUD DE COTIZACIÓN');
                 $messaje->to('industriascoc01@gmail.com')->subject('SOLICITUD DE COTIZACIÓN');
                 
             });
+            */
             $cont=0;
             \Session::forget('cart');
             return Redirect::to('cart/show')->with("success","Hemos recibido su solicitud. Nos comunicaremos con usted en su brevedad.");
@@ -142,6 +144,7 @@ class CartController extends Controller
         {
             return Redirect::to('cart/show')->with("error","Ha ocurrido un error al enviar su formulario. Inténtelo más tarde.");
         }
+        
     }
 
     /**

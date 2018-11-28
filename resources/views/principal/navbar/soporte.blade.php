@@ -45,7 +45,7 @@
             <div class="side_bar">
                 <div class="side_bar_blog">
                     <h4>Noticias recientes</h4>
-                    <p>{{$noticia->descripcion}}
+                    <p>sin noticias
                     </p>
                     <p class="enlaceBlog"><a href="/noticias">Ver más</a></p>
                 </div>

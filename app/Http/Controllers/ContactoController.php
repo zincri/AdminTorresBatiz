@@ -72,6 +72,8 @@ class ContactoController extends Controller
         $mensaje=$request->get('mensaje');
         $modelo="ninguno";
         $usuario=2;
+        $hojassize="no importa";
+        $serie="no importa";
         
         
         
@@ -87,6 +89,8 @@ class ContactoController extends Controller
             '".$volumen."',
             '".$mensaje."',
             '".$modelo."',
+            '".$hojassize."',
+            '".$serie."',
             '".$usuario."'
             
         )";
